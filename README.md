@@ -65,7 +65,7 @@ X(旧:Twitter)での発信
 |Web API|OpenAI API / LINE Messaging API(検討中)|
 |その他|AWS S3 / Bootstrap もしくは Tailwindcss|
 
-## ■現状考えている課題
+## ■現状考えている課題・検討事項
 * 画像サイズの最適化(生成された画像サイズが大きすぎる) 
 * 画像生成中のUXの低下(ActiveJobで改善できるか検証予定)
 * OpenAIAPI以外のAPIの検討(GeminiAPIなど)
