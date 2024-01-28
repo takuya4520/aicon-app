@@ -70,3 +70,6 @@ X(旧:Twitter)での発信
 * 画像サイズの最適化(生成された画像サイズが大きすぎる) 
 * 画像生成中のUXの低下(ActiveJobで改善できるか検証予定)
 * OpenAIAPI以外のAPIの検討(GeminiAPIなど)
+
+## ■画面遷移図
+[画面遷移図](https://www.figma.com/file/r1CkCJNq8dRtqha5bFirlU/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0-1&mode=design&t=7wbMxzTMZGb3KW1S-0)
