@@ -124,7 +124,7 @@ erDiagram
         int created_icons_id FK "作成アイコンID"
     }
 
-    USERS ||--o{ POST_ICONS : "creates"
+    USERS ||--o{ POST_ICONS : "posts"
     USERS ||--o{ CREATED_ICONS : "creates"
     USERS ||--o{ POST_ICON_LIKES : "likes"
     USERS ||--o{ CREATED_ICON_LIKES : "likes"
