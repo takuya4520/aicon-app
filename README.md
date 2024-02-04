@@ -94,7 +94,7 @@ erDiagram
         int user_id FK "ユーザーID"
         string title "タイトル"
         string icon_url "アイコン"
-        string publicity_status "公開設定"
+        int publicity_status "公開設定"
         datetime created_at "作成日"
         datetime updated_at "更新日"
     }
