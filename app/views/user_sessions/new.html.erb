@@ -12,11 +12,11 @@
           <%= f.password_field :password, class: 'form-control' %>
         </div>
         <div class="actions">
-          <%= f.submit 'ログイン', class: 'btn btn-primary' %>
+          <%= f.submit 'ログイン', class: 'btn' %>
         </div>
       <% end %>
       <div class='text-center'>
-        <%= link_to '登録ページへ', "#" %>
+        <%= link_to '登録ページへ', new_user_path %>
         <a href="#">パスワードをお忘れの方はこちら</a>
       </div>
     </div>
