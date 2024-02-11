@@ -1,13 +1,15 @@
-<div class="col-sm-5 col-lg-4 mb-3">
-  <div id="post-id-<%= post_icon.id %>">
-    <div class="card">
-      <%= link_to (post_icon_path(post_icon)), class: "btn",data: { turbo: false } do %>
-        <div class="card-body text-center">
-            <%= post_icon.title %>
-            <%= post_icon.user.name %>
-            <%= post_icon.created_at.to_date %>
-        </div>
-      <% end %>
+
+
+<div class="card primary-content">
+  <%= link_to (post_icon_path(post_icon)),data: { turbo: false } do %>
+    <figure><%= image_tag post_icon.icon if post_icon.icon.attached? %></figure>
+    <div class="card-body items-center text-center">
+      <h2 class="card-title"><%= post_icon.title %></h2>
+      <p>
+        <%= post_icon.user.name %>
+      </p>
+      <p>
+        <%= post_icon.created_at.to_date %></p>
     </div>
-  </div>
+ <% end %>
 </div>

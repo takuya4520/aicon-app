@@ -1,19 +1,15 @@
 <header>
-  <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
-
-    <button class='navbar-toggler' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto main-nav align-items-center">
-        <li class="nav-item">
-          <%= link_to 'トップページ', root_path, class: 'btn' %>
-          <%= link_to 'ログアウト', logout_path, class: 'btn', data: { turbo_method: :delete }  %>
-          <%= link_to '投稿',  new_post_icon_path, class: 'btn' %>
-          <%= link_to '投稿一覧',  post_icons_path, class: 'btn' %>
-        </li>
+  <div class="navbar bg-base-100">
+    <div class="flex-1">
+      <a class="btn btn-ghost text-xl">あいこん屋</a>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+        <li><%= link_to 'トップページ', root_path %></li>
+        <li><%= link_to '投稿',  new_post_icon_path %></li>
+        <li><%= link_to '投稿一覧',  post_icons_path %></li>
+        <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
       </ul>
     </div>
-  </nav>
+  </div>
 </header>
