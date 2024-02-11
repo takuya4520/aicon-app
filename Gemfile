@@ -53,6 +53,9 @@ gem "bootsnap", require: false
 
 gem "sorcery"
 
+gem "active_storage_validations", "0.9.8"
+gem "image_processing",           "1.12.2"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
