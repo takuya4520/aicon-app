@@ -10,6 +10,8 @@
         <li class="nav-item">
           <%= link_to 'トップページ', root_path, class: 'btn' %>
           <%= link_to 'ログアウト', logout_path, class: 'btn', data: { turbo_method: :delete }  %>
+          <%= link_to '投稿',  new_post_icon_path, class: 'btn' %>
+          <%= link_to '投稿一覧',  post_icons_path, class: 'btn' %>
         </li>
       </ul>
     </div>

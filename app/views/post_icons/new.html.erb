@@ -1,0 +1,5 @@
+ <h2>アイコンの投稿</h2>
+<%= form_with model: @posticon, url: post_icons_path, local: true do |f| %>
+  <%= f.text_field :title, class: "form-control", placeholder: '例：散歩している黒柴' %>
+  <%= f.submit "Post", class: "btn" %>
+<% end %>
