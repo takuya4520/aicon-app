@@ -1,0 +1,13 @@
+<div class ="text-center m-2">
+  <h2><%=@posticon.user.name%>のアイコン</h2>
+  <div>
+    <p>タイトル: <%=@posticon.title%></p>
+  </div>
+
+  <div>
+    <% if current_user == @posticon.user %>
+      <%= link_to "削除", post_icon_path(@posticon),class: "btn", data: { turbo_method: :delete } %>
+    <% end %>
+  </div>
+  <%= link_to "一覧へ", post_icons_path , class:"btn" %>
+</div>
