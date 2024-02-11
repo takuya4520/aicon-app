@@ -11,6 +11,7 @@ class PostIconsController < ApplicationController
   def create
     logger.debug params.inspect 
     @posticon = current_user.post_icons.build(posticon_params)
+    @posticon.icon.attach(params[:post_icon][:icon])
     if @posticon.save
       flash[:success] = "Micropost created!"
       redirect_to post_icons_url
@@ -40,7 +41,7 @@ class PostIconsController < ApplicationController
     end
 
     def posticon_params
-      params.require(:post_icon).permit(:title)
+      params.require(:post_icon).permit(:title,:icon)
     end
 
 end
