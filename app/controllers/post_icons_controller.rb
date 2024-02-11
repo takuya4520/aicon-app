@@ -1,0 +1,2 @@
+class PostIconsController < ApplicationController
+end
