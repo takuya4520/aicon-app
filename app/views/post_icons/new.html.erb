@@ -1,8 +1,18 @@
- <h2>アイコンの投稿</h2>
-<%= form_with model: @posticon, url: post_icons_path, local: true do |f| %>
-  <%= f.text_field :title, class: "form-control", placeholder: 'タイトル' %>
-  <span class="icon">
-    <%= f.file_field :icon, accept: "image/jpeg,image/gif,image/png" %>
-  </span>
-  <%= f.submit "Post", class: "btn" %>
-<% end %>
+<div class="">
+  <div class="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-lg">
+     <h1 class="text-3xl font-semibold text-center text-purple-700">アイコンの投稿</h1>
+    <div class= "space-y-4">
+      <%= form_with model: @posticon, url: post_icons_path, local: true do |f| %>
+        <%= f.text_field :title, class: "w-full input input-bordered input-primary space-y-4", placeholder: 'タイトル' %>
+        <span class="icon">
+          <%= f.file_field :icon, accept: "image/jpeg,image/gif,image/png", class: "file-input w-full max-w-xs" %>
+        </span>
+        <div class='text-center'>
+          <%= f.submit "投稿", class: "text-center btn" %>
+        </div>
+      <% end %>
+    <div class='text-center link link-neutral'>
+      <%= link_to '投稿一覧へ', icons_path %>
+    </div>
+  </div>
+</div>
