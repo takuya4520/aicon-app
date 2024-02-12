@@ -1,1 +1,9 @@
 // Entry point for your Sass build
+#menu {
+  transition: transform 0.3s ease;
+  transform: translateY(-100%);
+}
+
+#menu.block {
+  transform: translateY(0);
+}

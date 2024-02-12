@@ -1,6 +1,6 @@
 <div class="">
   <div class="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-lg">
-     <h1 class="text-3xl font-semibold text-center text-purple-700">アイコンの投稿</h1>
+     <h1 class="text-3xl font-semibold text-center">アイコンの投稿</h1>
     <div class= "space-y-4">
       <%= form_with model: @posticon, url: post_icons_path, local: true do |f| %>
         <%= f.text_field :title, class: "w-full input input-bordered input-primary space-y-4", placeholder: 'タイトル' %>
