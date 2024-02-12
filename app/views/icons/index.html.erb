@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="">
+		<% if @icons.present? %>
+			<% @icons.each do |icon| %>
+				<% if icon.is_a?(PostIcon) %>
+					<%= render 'post_icon', icon: icon %>
+				<% elsif icon.is_a?(CreatedIcon) %>
+					<%= render 'created_icon', icon: icon %>
+				<% end %>
+			<% end %>
+		<% else %>
+			<p>投稿がありません。</p>
+		<% end %>
+	</div>
+</div>
