@@ -16,7 +16,9 @@
     <% else %>
       <%= render 'shared/before_login_header' %>
     <% end %>
-    <%= yield %>
+    <div>
+      <%= yield %>
+    <div class= "w-full m-auto text-center">
     <%= render 'shared/footer' %>
   </body>
 </html>
