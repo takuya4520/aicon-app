@@ -282,7 +282,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_storage_validations (= 0.9.8)
-  aws-sdk-s3 (= 1.114.0)
+  aws-sdk-s3
   bootsnap
   byebug
   capybara
