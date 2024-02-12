@@ -1,15 +1,32 @@
+
 <header>
   <div class="navbar bg-base-100">
     <div class="flex-1">
       <%= link_to 'あいこん屋', root_path, class: "btn btn-ghost text-xl" %>
     </div>
-    <div class="flex-none">
+    <div class="flex-none lg:hidden">
+      <button id="menuButton" class="btn btn-square btn-ghost">
+        <!-- ハンバーガーメニューアイコン -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+    <div class="hidden lg:block">
       <ul class="menu menu-horizontal px-1">
-        <li><%= link_to 'アイコン生成',  new_created_icon_path %></li>
-        <li><%= link_to 'アイコン投稿',  new_post_icon_path %></li>
-        <li><%= link_to 'みんなのアイコン',  icons_path %></li>
+        <li><%= link_to 'アイコン生成', new_created_icon_path %></li>
+        <li><%= link_to 'アイコン投稿', new_post_icon_path %></li>
+        <li><%= link_to 'みんなのアイコン', icons_path %></li>
         <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
       </ul>
     </div>
+  </div>
+  <div id="menu" class="hidden absolute w-full bg-base-100 z-10">
+    <ul class="menu p-4">
+      <li><%= link_to 'アイコン生成', new_created_icon_path %></li>
+      <li><%= link_to 'アイコン投稿', new_post_icon_path %></li>
+      <li><%= link_to 'みんなのアイコン', icons_path %></li>
+      <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
+    </ul>
   </div>
 </header>
