@@ -5,9 +5,10 @@
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
-        <li><%= link_to 'トップページ', root_path %></li>
-        <li><%= link_to '投稿',  new_post_icon_path %></li>
+        <li><%= link_to 'アイコン生成',  new_created_icon_path %></li>
+        <li><%= link_to 'アイコン投稿',  new_post_icon_path %></li>
         <li><%= link_to '投稿一覧',  post_icons_path %></li>
+        <li><%= link_to '投稿一覧2',  created_icons_path %></li>
         <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
       </ul>
     </div>
