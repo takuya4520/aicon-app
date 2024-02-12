@@ -1,0 +1,2 @@
+module CreatedIconsHelper
+end
