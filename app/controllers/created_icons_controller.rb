@@ -12,7 +12,7 @@ class CreatedIconsController < ApplicationController
     @createdicon.icon.attach(ActiveStorage::Blob.find_by(key: image_key)) if image_key
     if @createdicon.save
       flash[:success] = "Micropost created!"
-      redirect_to created_icons_url
+      redirect_to icons_url
     else
       render :new, status: :unprocessable_entity
     end
