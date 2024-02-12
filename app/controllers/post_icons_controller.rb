@@ -1,8 +1,5 @@
 class PostIconsController < ApplicationController
   before_action :set_posticon, only: %i[destroy]
-  def index
-    @posticons = PostIcon.all.includes(:user).order(created_at: :desc)
-  end
 
   def new
     @posticon = PostIcon.new

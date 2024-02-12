@@ -1,17 +1,13 @@
 <header>
-  <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
-
-    <button class='navbar-toggler' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto main-nav align-items-center">
-        <li class="nav-item">
-          <%= link_to 'トップページ', root_path, class: 'btn' %>
-          <%= link_to 'ログイン', login_path, class: 'btn' %>
-        </li>
+  <div class="navbar bg-base-100">
+    <div class="flex-1">
+      <%= link_to 'あいこん屋', root_path, class: "btn btn-ghost text-xl" %>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+        <li><%= link_to 'みんなのアイコン',  icons_path %></li>
+        <li><%= link_to 'ログイン', login_path %></li>
       </ul>
     </div>
-  </nav>
+  </div>
 </header>
