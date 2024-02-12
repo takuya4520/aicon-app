@@ -1,29 +1,21 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1>ユーザー登録</h1>
+<div class="">
+  <div class="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-lg">
+     <h1 class="text-3xl font-semibold text-center text-purple-700">ユーザー登録</h1>
+    <div class= "space-y-4">
       <%= form_with model: @user, local: true do |f| %>
-        <div class="form-group">
-          <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password %>
-          <%= f.password_field :password, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
-        </div>
-        <%= f.submit '登録', class: 'btn' %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'w-full input input-bordered input-primary' %>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'w-full input input-bordered input-primary' %>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'w-full input input-bordered input-primary' %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'w-full input input-bordered input-primary' %>
+        <%= f.submit '新規登録', class: 'btn' %>
       <% end %>
-      <div class='text-center'>
-        <%= link_to 'ログインページへ', login_path %>
-      </div>
+    <div>
+    <div class='text-center link link-neutral'>
+      <%= link_to 'ログインページへ', login_path %>
     </div>
   </div>
 </div>
