@@ -1,0 +1,12 @@
+ <h2>アイコンの投稿</h2>
+<%= form_with model: @createdicon, url: created_icons_path, local: true do |f| %>
+  <%= f.text_field :title, class: "form-control", placeholder: 'タイトル' %>
+  <%= f.radio_button :taste, 'cute', id: 'taste_cute', class: 'form-check-input', checked: true %>
+  <%= f.label :taste_cute, 'cute', class: 'form-check-label' %>  
+  <%= f.radio_button :taste, 'cool', id: 'taste_cool', class: 'form-check-input' %>
+  <%= f.label :taste_cool, 'cool', class: 'form-check-label' %>
+  <span class="icon">
+    <%= f.file_field :icon, accept: "image/jpeg,image/gif,image/png" %>
+  </span>
+  <%= f.submit "Post", class: "btn" %>
+<% end %>
