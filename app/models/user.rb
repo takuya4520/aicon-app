@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 255 }
 
   has_many :post_icons
+  has_many :created_icons
 end

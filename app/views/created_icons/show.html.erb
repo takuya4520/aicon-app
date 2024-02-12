@@ -1,0 +1,13 @@
+<div class ="card">
+  <div class ="items-center text-center m-2">
+    <h2><%=@createdicon.user.name%>のアイコン</h2>
+    <p>タイトル: <%=@createdicon.title%></p>
+    <figure><%= image_tag @createdicon.icon if @createdicon.icon.attached? %></figure>
+    <div>
+      <% if current_user == @createdicon.user %>
+        <%= link_to "削除", created_icon_path(@createdicon),class: "btn", data: { turbo_method: :delete } %>
+      <% end %>
+    </div>
+    <%= link_to "一覧へ", created_icons_path , class:"btn" %>
+  </div>
+</div>

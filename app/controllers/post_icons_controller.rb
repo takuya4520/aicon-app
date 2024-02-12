@@ -9,7 +9,6 @@ class PostIconsController < ApplicationController
   end
 
   def create
-    logger.debug params.inspect 
     @posticon = current_user.post_icons.build(posticon_params)
     @posticon.icon.attach(params[:post_icon][:icon])
     if @posticon.save
