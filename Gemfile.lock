@@ -122,6 +122,9 @@ GEM
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashie (5.0.0)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -279,12 +282,13 @@ PLATFORMS
 
 DEPENDENCIES
   active_storage_validations (= 0.9.8)
-  aws-sdk-s3 (= 1.114.0)
+  aws-sdk-s3
   bootsnap
   byebug
   capybara
   cssbundling-rails
   debug
+  httparty
   image_processing (= 1.12.2)
   jbuilder
   jsbundling-rails
