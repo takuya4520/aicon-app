@@ -1,0 +1,13 @@
+<div class="card primary-content">
+  <%= link_to (created_icon_path(icon)),data: { turbo: false } do %>
+    <figure><%= image_tag icon.icon.variant(:display) if icon.icon.attached? %></figure>
+    <div class="card-body items-center text-center">
+      <h2 class="card-title"><%= icon.title %></h2>
+      <p>
+        <%= icon.user.name %>
+      </p>
+      <p>
+        <%= icon.created_at.to_date %></p>
+    </div>
+ <% end %>
+</div>
