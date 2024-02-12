@@ -1,8 +1,5 @@
 class CreatedIconsController < ApplicationController
   before_action :set_createdicon, only: %i[destroy]
-  def index
-    @createdicons = CreatedIcon.all.includes(:user).order(created_at: :desc)
-  end
 
   def new
     @createdicon =  CreatedIcon.new

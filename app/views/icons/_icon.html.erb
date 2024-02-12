@@ -1,15 +1,13 @@
-
-
 <div class="card primary-content">
   <%= link_to (post_icon_path(post_icon)),data: { turbo: false } do %>
     <figure><%= image_tag post_icon.icon.variant(:display) if post_icon.icon.attached? %></figure>
     <div class="card-body items-center text-center">
-      <h2 class="card-title"><%= post_icon.title %></h2>
+      <h2 class="card-title"><%= icon.title %></h2>
       <p>
-        <%= post_icon.user.name %>
+        <%= icon.user.name %>
       </p>
       <p>
-        <%= post_icon.created_at.to_date %></p>
+        <%= icon.created_at.to_date %></p>
     </div>
  <% end %>
 </div>
