@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_11_232813) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_14_110553) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_11_232813) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0, null: false
     t.index ["user_id", "created_at"], name: "index_post_icons_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_post_icons_on_user_id"
   end
