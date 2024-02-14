@@ -1,5 +1,5 @@
 class PostIconsController < ApplicationController
-  before_action :set_posticon, only: %i[destroy]
+  before_action :set_posticon, only: %i[edit update destroy]
 
   def new
     @posticon = PostIcon.new
@@ -10,7 +10,7 @@ class PostIconsController < ApplicationController
     @posticon.icon.attach(params[:post_icon][:icon])
     if @posticon.save
       flash[:success] = "Micropost created!"
-      redirect_to post_icons_url
+      redirect_to post_icon_url(@posticon)
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,6 +24,12 @@ class PostIconsController < ApplicationController
   end
 
   def update
+    if @posticon.update(posticon_params)
+      redirect_to icons_url, notice: "アウトプットを編集しました"
+    else
+      flash.now[:danger] = "編集に失敗しました"
+      render icons_url
+    end
   end
 
   def destroy
@@ -39,5 +45,4 @@ class PostIconsController < ApplicationController
     def posticon_params
       params.require(:post_icon).permit(:title,:icon)
     end
-
 end
