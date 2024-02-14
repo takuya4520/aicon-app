@@ -5,6 +5,7 @@
     <figure><%= image_tag @posticon.icon if @posticon.icon.attached? %></figure>
     <div>
       <% if current_user == @posticon.user %>
+        <%= link_to "編集", edit_post_icon_path(@posticon),class: "link"%>
         <%= link_to "削除", post_icon_path(@posticon),class: "link link-error", data: { turbo_method: :delete } %>
       <% end %>
     </div>
