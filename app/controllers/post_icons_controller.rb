@@ -28,7 +28,7 @@ class PostIconsController < ApplicationController
 
   def destroy
     @posticon.destroy!
-    redirect_to post_icons_path
+    redirect_to icons_path, status: :see_other
   end
 
   private
