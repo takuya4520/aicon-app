@@ -24,7 +24,7 @@ class CreatedIconsController < ApplicationController
 
   def destroy
     @createdicon.destroy!
-    redirect_to created_icons_path
+    redirect_to icons_path, status: :see_other
   end
 
   private
