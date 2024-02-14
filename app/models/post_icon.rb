@@ -10,4 +10,5 @@ class PostIcon < ApplicationRecord
                                       message: "must be a valid icon format" },
                       size:         { less_than: 5.megabytes,
                                       message:   "should be less than 5MB" }
+  enum status: { published: 0, unpublished: 1 }
 end
