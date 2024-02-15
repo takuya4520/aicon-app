@@ -2,7 +2,7 @@
   <div class="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-lg">
      <h1 class="text-3xl font-semibold text-center">アイコンの生成</h1>
     <div class= "space-y-4">
-      <%= form_with model: @createdicon, url: created_icons_path, local: true do |f| %>
+      <%= form_with model: @createdicon, local: true do |f| %>
         <%= f.text_field :title, class: "w-full input input-bordered input-primary space-y-4", placeholder: 'キーワード' %>
         <div class='text-center my-4'>
           <%= f.radio_button :taste, 'cute', id: 'taste_cute', class: 'radio', checked: true %>
