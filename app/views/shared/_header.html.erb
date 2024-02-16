@@ -17,6 +17,7 @@
         <li><%= link_to 'アイコン生成', new_created_icon_path %></li>
         <li><%= link_to 'アイコン投稿', new_post_icon_path %></li>
         <li><%= link_to 'みんなのアイコン', icons_path %></li>
+        <li><%= link_to 'マイページ', user_path(current_user) %></li>
         <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
       </ul>
     </div>
