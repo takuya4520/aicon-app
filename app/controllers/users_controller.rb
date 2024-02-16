@@ -13,6 +13,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    post_icons = @user.post_icons.includes(:user)
+    created_icons = @user.created_icons.includes(:user)
+    @icons = (post_icons + created_icons).sort_by(&:created_at).reverse
+  end
+
   private
 
   def user_params
