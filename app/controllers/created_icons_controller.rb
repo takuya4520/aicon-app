@@ -1,5 +1,5 @@
 class CreatedIconsController < ApplicationController
-  before_action :set_createdicon, only: %i[destroy]
+  before_action :set_createdicon, only: %i[edit update destroy]
 
   def new
     @createdicon =  CreatedIcon.new
@@ -22,6 +22,18 @@ class CreatedIconsController < ApplicationController
     @createdicon = CreatedIcon.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+    if @createdicon.update(createdicon_params)
+      redirect_to created_icon_path(@createdicon), notice: "アウトプットを編集しました"
+    else
+      flash.now[:danger] = "編集に失敗しました"
+      render icons_url
+    end
+  end
+
   def destroy
     @createdicon.destroy!
     redirect_to icons_path, status: :see_other
@@ -33,7 +45,7 @@ class CreatedIconsController < ApplicationController
     end
 
     def createdicon_params
-      params.require(:created_icon).permit(:title, :taste, :icon)
+      params.require(:created_icon).permit(:title, :taste, :icon, :status)
     end
 
 end
