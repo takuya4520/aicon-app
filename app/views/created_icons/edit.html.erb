@@ -2,12 +2,8 @@
   <div class="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-lg">
     <h1 class="text-3xl font-semibold text-center">アイコンの投稿</h1>
     <div class ="items-center text-center m-2">
-      <%= form_with model: @posticon, local: true do |f| %>
-        <%= f.text_field :title, class: "w-full input input-bordered input-primary space-y-4", placeholder: 'タイトル' %>
-        <span class="icon">
-          <%= f.file_field :icon, accept: "image/jpeg,image/gif,image/png", class: "file-input w-full max-w-xs" %>
-        </span>
-        <figure><%= image_tag @posticon.icon if @posticon.icon.attached? %></figure>
+      <%= form_with model: @createdicon, local: true do |f| %>
+        <figure><%= image_tag @createdicon.icon if @createdicon.icon.attached? %></figure>
         <div class='text-center my-4'>
           <%= f.radio_button :status, 'published', id: 'status_published', class: 'status' %>
           <%= f.label :status_published, '公開', class: 'form-check-label' %>  
@@ -20,8 +16,8 @@
         </div>
       <% end %>
     <div>
-      <% if current_user == @posticon.user %>
-        <%= link_to "削除", post_icon_path(@posticon),class: "link link-error", data: { turbo_method: :delete } %>
+      <% if current_user == @createdicon.user %>
+        <%= link_to "削除", created_icon_path(@createdicon),class: "link link-error", data: { turbo_method: :delete } %>
       <% end %>
     </div>
     <%= link_to "一覧へ", icons_path , class:"link link-neutral" %>

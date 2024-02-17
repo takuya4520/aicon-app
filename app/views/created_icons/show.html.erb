@@ -5,6 +5,7 @@
     <figure><%= image_tag @createdicon.icon if @createdicon.icon.attached? %></figure>
     <div>
       <% if current_user == @createdicon.user %>
+        <%= link_to "編集", edit_created_icon_path(@createdicon),class: "link"%>
         <%= link_to "削除", created_icon_path(@createdicon),class: "link link-error", data: { turbo_method: :delete } %>
       <% end %>
     </div>
