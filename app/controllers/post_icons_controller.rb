@@ -25,7 +25,7 @@ class PostIconsController < ApplicationController
 
   def update
     if @posticon.update(posticon_params)
-      redirect_to icons_url, notice: "アウトプットを編集しました"
+      redirect_to post_icon_path(@posticon), notice: "アウトプットを編集しました"
     else
       flash.now[:danger] = "編集に失敗しました"
       render icons_url
@@ -43,6 +43,6 @@ class PostIconsController < ApplicationController
     end
 
     def posticon_params
-      params.require(:post_icon).permit(:title,:icon)
+      params.require(:post_icon).permit(:title, :icon, :status)
     end
 end
