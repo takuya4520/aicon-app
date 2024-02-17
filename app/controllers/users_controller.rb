@@ -6,9 +6,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.current_icon.attach(params[:user][:current_icon])
     if @user.save
       redirect_to login_path
-    else#
+    else
       render :new
     end
   end
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-        params.require(:user).permit(:email, :password, :password_confirmation, :name, :salt)
-   end
+    def user_params
+      params.require(:user).permit(:email, :password, :password_confirmation, :name, :salt, :current_icon)
+    end
 end
