@@ -43,6 +43,6 @@ class PostIconsController < ApplicationController
     end
 
     def posticon_params
-      params.require(:post_icon).permit(:title,:icon)
+      params.require(:post_icon).permit(:title, :icon, :status)
     end
 end
