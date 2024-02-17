@@ -11,9 +11,14 @@
         <%= f.password_field :password, class: 'w-full input input-bordered input-primary' %>
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, class: 'w-full input input-bordered input-primary' %>
-        <%= f.submit '新規登録', class: 'btn  my-3' %>
+        <span class="text-center">
+          <%= f.file_field :current_icon, accept: "image/jpeg,image/gif,image/png", class: "file-input w-full max-w-xs m-5" %>
+        </span>
+        <div class="text-3xl font-semibold text-center">
+          <%= f.submit '新規登録', class: 'btn  my-3' %>
+        </div>
       <% end %>
-    <div>
+    </div>
     <div class='text-center link link-neutral'>
       <%= link_to 'ログインページへ', login_path %>
     </div>

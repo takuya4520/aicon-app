@@ -4,30 +4,50 @@
     <div class="flex-1">
       <%= link_to 'あいこん屋', root_path, class: "btn btn-ghost text-xl" %>
     </div>
-    <div class="flex-none lg:hidden">
-      <button id="menuButton" class="btn btn-square btn-ghost">
-        <!-- ハンバーガーメニューアイコン -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
+    <div class="flex-none md:hidden">
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost rounded-btn">
+          <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+        </div>
+        <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+          <li><%= link_to 'アイコン生成', new_created_icon_path %></li>
+          <li><%= link_to 'アイコン投稿', new_post_icon_path %></li>
+          <li><%= link_to 'みんなのアイコン', icons_path %></li>
+        </ul>
+      </div>
+      <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="btn btn-ghost rounded-btn">
+            <div class="avatar">
+              <div class="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                 <%= image_tag current_user.current_icon if current_user.current_icon.attached? %>
+              </div>
+            </div>
+          </div>
+          <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li><%= link_to 'マイページ', user_path(current_user) %></li>
+            <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
+          </ul>
+        </div>
     </div>
-    <div class="hidden lg:block">
-      <ul class="menu menu-horizontal px-1">
+    <div class="hidden md:block">
+      <ul class="menu menu-horizontal px-1 items-center py-0">
         <li><%= link_to 'アイコン生成', new_created_icon_path %></li>
         <li><%= link_to 'アイコン投稿', new_post_icon_path %></li>
         <li><%= link_to 'みんなのアイコン', icons_path %></li>
-        <li><%= link_to 'マイページ', user_path(current_user) %></li>
-        <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="btn btn-ghost rounded-btn">
+            <div class="avatar">
+              <div class="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                 <%= image_tag current_user.current_icon if current_user.current_icon.attached? %>
+              </div>
+            </div>
+          </div>
+          <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li><%= link_to 'マイページ', user_path(current_user) %></li>
+            <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
+          </ul>
+        </div>
       </ul>
     </div>
-  </div>
-  <div id="menu" class="hidden absolute w-full bg-base-100 z-10">
-    <ul class="menu p-4">
-      <li><%= link_to 'アイコン生成', new_created_icon_path %></li>
-      <li><%= link_to 'アイコン投稿', new_post_icon_path %></li>
-      <li><%= link_to 'みんなのアイコン', icons_path %></li>
-      <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
-    </ul>
   </div>
 </header>
