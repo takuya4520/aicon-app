@@ -8,8 +8,15 @@
           <%= f.file_field :icon, accept: "image/jpeg,image/gif,image/png", class: "file-input w-full max-w-xs" %>
         </span>
         <figure><%= image_tag @posticon.icon if @posticon.icon.attached? %></figure>
+        <div class='text-center my-4'>
+          <%= f.radio_button :status, 'published', id: 'status_published', class: 'status' %>
+          <%= f.label :status_published, '公開', class: 'form-check-label' %>  
+          
+          <%= f.radio_button :status, 'unpublished', id: 'status_unpublished', class: 'status' %>
+          <%= f.label :status_unpublished, '非公開', class: 'form-check-label' %>
+        </div>
         <div class='text-center'>
-          <%= f.submit "編集", class: "text-center btn" %>
+          <%= f.submit "変更", class: "text-center btn" %>
         </div>
       <% end %>
     <div>
