@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-lg">
+    <h1 class="text-3xl font-semibold text-center">アイコンの投稿</h1>
+    <div class ="items-center text-center m-2">
+      <%= form_with model: @createdicon, local: true do |f| %>
+        <figure><%= image_tag @createdicon.icon if @createdicon.icon.attached? %></figure>
+        <div class='text-center my-4'>
+          <%= f.radio_button :status, 'published', id: 'status_published', class: 'status' %>
+          <%= f.label :status_published, '公開', class: 'form-check-label' %>  
+          
+          <%= f.radio_button :status, 'unpublished', id: 'status_unpublished', class: 'status' %>
+          <%= f.label :status_unpublished, '非公開', class: 'form-check-label' %>
+        </div>
+        <div class='text-center'>
+          <%= f.submit "変更", class: "text-center btn" %>
+        </div>
+      <% end %>
+    <div>
+      <% if current_user == @createdicon.user %>
+        <%= link_to "削除", created_icon_path(@createdicon),class: "link link-error", data: { turbo_method: :delete } %>
+      <% end %>
+    </div>
+    <%= link_to "一覧へ", icons_path , class:"link link-neutral" %>
+  </div>
+  </div>
+</div>
