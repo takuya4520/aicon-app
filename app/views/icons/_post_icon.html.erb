@@ -1,26 +1,35 @@
 <div class="card primary-content m-5 bg-base-100 shadow-xl">
   <%= link_to (post_icon_path(icon)),data: { turbo: false } do %>
-    <div class="avatar m-5 justify-content">
+    <div class="avatar mt-5 mx-5 justify-content">
       <div class="w-40 rounded-full ring ring-primary justify-center">
         <%= image_tag icon.icon if icon.icon.attached? %>
       </div>
     </div>
     <div class="card-body items-center text-center">
       <div>
+        <% if icon.status == "published" %>
+          <div class="badge m-2">公開中</div>
+        <% else %>
+          <div class="badge badge-neutral m-2">非公開</div>
+        <% end %> 
+      </div>
+      <div class="flex items-center text-center">
         <% if current_user.current_icon.attached?%>
-          <div class="avatar">
+          <div class="avatar p-2">
             <div class="w-8 rounded-full ring ring-success ring-offset-base-100 ring-offset-2">
                 <%= image_tag icon.user.current_icon %>
             </div>
           </div>
         <% else %>  
-          <div class="avatar placeholder">
+          <div class="avatar placeholder p-2">
             <div class="bg-neutral text-neutral-content rounded-full w-8">
               <span class="text-[0.5rem]"><%=icon.user.name%></span>
             </div>
           </div>
         <% end %> 
-        <%= icon.user.name %>
+        <div class="p-2">
+          <%= icon.user.name %>
+        </div>
       </div>
       <p>
         <%= icon.created_at.to_date %></p>
