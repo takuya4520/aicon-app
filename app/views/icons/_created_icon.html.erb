@@ -14,7 +14,7 @@
         <% end %> 
       </div>
       <div class="flex items-center text-center">
-        <% if current_user.current_icon.attached?%>
+        <% if icon.user.current_icon.attached?%>
           <div class="avatar p-2">
             <div class="w-8 rounded-full ring ring-success ring-offset-base-100 ring-offset-2">
                 <%= image_tag icon.user.current_icon %>
