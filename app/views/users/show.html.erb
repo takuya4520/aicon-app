@@ -9,13 +9,13 @@
             <figure>
               <% if current_user.current_icon.attached?%>
                 <div class="avatar">
-                  <div class="w-24 rounded-full ring ring-success ring-offset-base-100 ring-offset-2 m-3">
+                  <div class="w-40 rounded-full ring ring-success ring-offset-base-100 ring-offset-2 m-3">
                       <%= image_tag @user.current_icon %>
                   </div>
                 </div>
               <% else %>  
                 <div class="avatar placeholder">
-                  <div class="bg-neutral text-neutral-content rounded-full ring ring-success w-24 m-3">
+                  <div class="bg-neutral text-neutral-content rounded-full ring ring-success w-40 m-3">
                     <span class="text-l"><%=@user.name%></span>
                   </div>
                 </div>
