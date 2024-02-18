@@ -19,9 +19,9 @@
 	    <% if @icons.present? %>
 		    <% @icons.each do |icon| %>
 			    <% if icon.is_a?(PostIcon) %>
-				    <%= render 'post_icon', icon: icon %>
+				    <%= render 'icons/post_icon', icon: icon %>
 			    <% elsif icon.is_a?(CreatedIcon) %>
-				    <%= render 'created_icon', icon: icon %>
+				    <%= render 'icons/created_icon', icon: icon %>
 		    	<% end %>
 		    <% end %>
 	    <% else %>
