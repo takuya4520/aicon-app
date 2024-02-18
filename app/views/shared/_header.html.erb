@@ -17,12 +17,21 @@
       </div>
       <div class="dropdown dropdown-end">
           <div tabindex="0" role="button" class="btn btn-ghost rounded-btn">
-            <div class="avatar">
-              <div class="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                 <%= image_tag current_user.current_icon if current_user.current_icon.attached? %>
+            <% if current_user.current_icon.attached?%>
+              <div class="avatar">
+                <div class="w-8 rounded-full ring ring-success ring-offset-base-100 ring-offset-2">
+                    <%= image_tag current_user.current_icon %>
+                </div>
               </div>
-            </div>
+            <% else %>  
+              <div class="avatar placeholder">
+                <div class="bg-neutral text-neutral-content rounded-full ring ring-success w-8">
+                  <span class="text-[0.5rem]"><%=current_user.name%></span>
+                </div>
+              </div>
+            <% end %> 
           </div>
+          
           <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
             <li><%= link_to 'マイページ', user_path(current_user) %></li>
             <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
@@ -36,11 +45,19 @@
         <li><%= link_to 'みんなのアイコン', icons_path %></li>
         <div class="dropdown dropdown-end">
           <div tabindex="0" role="button" class="btn btn-ghost rounded-btn">
-            <div class="avatar">
-              <div class="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                 <%= image_tag current_user.current_icon if current_user.current_icon.attached? %>
+            <% if current_user.current_icon.attached?%>
+              <div class="avatar">
+                <div class="w-8 rounded-full ring ring-success ring-offset-base-100 ring-offset-2">
+                    <%= image_tag current_user.current_icon %>
+                </div>
               </div>
-            </div>
+            <% else %>  
+              <div class="avatar placeholder">
+                <div class="bg-neutral text-neutral-content rounded-full ring ring-success w-8">
+                  <span class="text-[0.5rem]"><%=current_user.name%></span>
+                </div>
+              </div>
+            <% end %> 
           </div>
           <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
             <li><%= link_to 'マイページ', user_path(current_user) %></li>

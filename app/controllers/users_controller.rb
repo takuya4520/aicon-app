@@ -21,6 +21,20 @@ class UsersController < ApplicationController
     @icons = (post_icons + created_icons).sort_by(&:created_at).reverse
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to user_path(current_user), notice: "アウトプットを編集しました"
+    else
+      flash.now[:danger] = "編集に失敗しました"
+      render :edit
+    end
+  end
+
   private
 
     def user_params
