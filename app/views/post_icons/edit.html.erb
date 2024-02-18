@@ -1,30 +1,33 @@
 <div class="card">
   <div class="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-lg">
-    <h1 class="text-3xl font-semibold text-center">アイコンの投稿</h1>
+    <h1 class="text-3xl font-semibold text-center">アイコンの編集</h1>
     <div class ="items-center text-center m-2">
       <%= form_with model: @posticon, local: true do |f| %>
-        <%= f.text_field :title, class: "w-full input input-bordered input-primary space-y-4", placeholder: 'タイトル' %>
-        <span class="icon">
-          <%= f.file_field :icon, accept: "image/jpeg,image/gif,image/png", class: "file-input w-full max-w-xs" %>
-        </span>
-        <figure><%= image_tag @posticon.icon if @posticon.icon.attached? %></figure>
+        <figure>
+          <div class="avatar">
+            <div class="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 m-3">
+                <%= image_tag @posticon.icon %>
+            </div>
+          </div>
+        </figure>
         <div class='text-center my-4'>
-          <%= f.radio_button :status, 'published', id: 'status_published', class: 'status' %>
+          <%= f.radio_button :status, 'published', id: 'status_published', class: 'radio' %>
           <%= f.label :status_published, '公開', class: 'form-check-label' %>  
           
-          <%= f.radio_button :status, 'unpublished', id: 'status_unpublished', class: 'status' %>
+          <%= f.radio_button :status, 'unpublished', id: 'status_unpublished', class: 'radio' %>
           <%= f.label :status_unpublished, '非公開', class: 'form-check-label' %>
         </div>
         <div class='text-center'>
-          <%= f.submit "変更", class: "text-center btn" %>
+          <%= f.submit "変更", class: "text-center btn m-3" %>
         </div>
       <% end %>
-    <div>
-      <% if current_user == @posticon.user %>
-        <%= link_to "削除", post_icon_path(@posticon),class: "link link-error", data: { turbo_method: :delete } %>
-      <% end %>
+      <div class='m-5'>
+        <% if current_user == @posticon.user %>
+          <%= link_to "削除", post_icon_path(@posticon),class: "text-xl link link-error m-5", data: { turbo_method: :delete } %>
+        <% end %>
+      </div>
+      <%= link_to "戻る", post_icon_path(@posticon) , class:"text-xl link m-5 link-neutral" %>
+      <%= link_to "一覧へ", icons_path , class:"text-xl link m-5 link-neutral" %>
     </div>
-    <%= link_to "一覧へ", icons_path , class:"link link-neutral" %>
-  </div>
   </div>
 </div>
