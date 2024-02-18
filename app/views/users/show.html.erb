@@ -2,18 +2,37 @@
   <aside class="w-full md:w-1/4">
     <section class="p-4">
       <h1 class="flex items-center text-lg font-bold">
-        <!-- gravatar_forの代わりにTailwind CSSを使って画像をスタイル -->
-        <h2 class="justify-center text-center text-xl"><%= @user.name %>のマイページ</h2>
+        <h2 class="justify-center text-center text-xl font-bold">マイページ</h2>
+        <div class ="card warning shadow-xl">
+          <div class ="items-center p-5 text-center">
+            <p class ="text-xl m-5"><%=@user.name%></p>
+            <figure>
+              <% if current_user.current_icon.attached?%>
+                <div class="avatar">
+                  <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 m-5">
+                      <%= image_tag @user.current_icon %>
+                  </div>
+                </div>
+              <% else %>  
+                <div class="avatar placeholder">
+                  <div class="bg-neutral text-neutral-content rounded-full  ring ring-primary w-24 m-5">
+                    <span class="text-l"><%=@user.name%></span>
+                  </div>
+                </div>
+              <% end %> 
+            </figure>
+          <div>
+          <% if current_user == @user %>
+            <%= link_to "編集", icons_path ,class:"link"%>
+          <% end %>
+        </div>
       </h1>
-    </section>
-    <section class="p-4">
-      <!-- 'shared/stats'の内容をここに配置、Tailwind CSSでスタイル -->
     </section>
   </aside>
   <div class="w-full md:w-3/4 p-4">
     <!-- ログイン状態に応じた表示、Tailwind CSSでスタイル -->
     <section>
-      <h3 class="text-lg font-semibold">投稿数: <%= @icons.count %></h3>
+      <h3 class="text-lg font-semibold justify-center">MyIcons: <%= @icons.count %></h3>
     </section>
     <div class="flex flex-wrap justify-center">
 	    <% if @icons.present? %>
