@@ -1,14 +1,41 @@
-<div class ="card">
+
+
+<div class ="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-lg">
   <div class ="items-center text-center m-2">
-    <h2><%=@posticon.user.name%>のアイコン</h2>
-    <p>タイトル: <%=@posticon.title%></p>
-    <figure><%= image_tag @posticon.icon if @posticon.icon.attached? %></figure>
-    <div>
+    <div  class="flex justify-center">
+      <% if @posticon.user.current_icon.attached?%>
+        <div class="avatar p-2">
+          <div class="w-8 rounded-full ring ring-success ring-offset-base-100 ring-offset-2">
+              <%= image_tag @posticon.user.current_icon %>
+          </div>
+        </div>
+      <% else %>  
+        <div class="avatar placeholder p-2">
+          <div class="bg-neutral text-neutral-content rounded-full w-8">
+            <span class="text-[0.5rem]"><%=@posticon.user.name%></span>
+          </div>
+        </div>
+      <% end %> 
+      <div class="p-2 text-lg font-bold">
+        <p>
+          <%= @posticon.user.name %> のアイコン
+        </p>
+      </div>
+    </div>
+    <p class="p-2 text-lg font-bold">タイトル: <%=@posticon.title%></p>
+    <figure>
+      <div class="avatar">
+        <div class="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 m-3">
+            <%= image_tag @posticon.icon %>
+        </div>
+      </div>
+    </figure>
+    <div class="m-5">
       <% if current_user == @posticon.user %>
-        <%= link_to "編集", edit_post_icon_path(@posticon),class: "link"%>
-        <%= link_to "削除", post_icon_path(@posticon),class: "link link-error", data: { turbo_method: :delete } %>
+        <%= link_to "編集", edit_post_icon_path(@posticon),class: "text-xl link px-5"%>
+        <%= link_to "削除", post_icon_path(@posticon),class: "text-xl link link-error px-5", data: { turbo_method: :delete } %>
       <% end %>
     </div>
-    <%= link_to "一覧へ", icons_path , class:"link link-neutral" %>
+    <%= link_to "一覧へ", icons_path , class:"link link-neutral text-xl" %>
   </div>
 </div>

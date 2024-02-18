@@ -2,8 +2,8 @@
   <aside class="w-full md:w-1/3">
     <section class="p-4">
       <h1 class="flex items-center text-lg font-bold">
-        <h2 class="justify-center text-center text-xl font-bold">マイページ</h2>
-        <div class ="card warning shadow-xl">
+        <h2 class="justify-center text-center text-xl font-bold mb-5">マイページ</h2>
+        <div class ="card bg-sky-50 warning shadow-xl">
           <div class ="items-center p-5 text-center">
             <p class ="text-xl m-5"><%=@user.name%></p>
             <figure>
@@ -31,7 +31,7 @@
   </aside>
   <div class="w-full md:w-2/3 p-4">
     <!-- ログイン状態に応じた表示、Tailwind CSSでスタイル -->
-    <section>
+    <section class="flex justify-center">
       <h3 class="text-lg font-semibold justify-center">MyIcons: <%= @icons.count %></h3>
     </section>
     <div class="flex flex-wrap justify-center">
