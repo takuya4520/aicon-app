@@ -3,7 +3,7 @@
      <h1 class="text-3xl font-semibold text-center">アイコンの生成</h1>
     <div class= "space-y-4">
       <%= form_with model: @createdicon, local: true do |f| %>
-        <%= f.text_field :title, class: "w-full input input-bordered input-primary space-y-4", placeholder: 'キーワード' %>
+        <%= f.text_field :title, class: "w-full input input-bordered input-accent space-y-4", placeholder: 'キーワード' %>
         <div class='text-center my-4'>
           <%= f.radio_button :taste, 'cute', id: 'taste_cute', class: 'radio', checked: true %>
           <%= f.label :taste_cute, 'cute', class: 'form-check-label' %>  
