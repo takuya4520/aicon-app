@@ -3,6 +3,7 @@ class IconsController < ApplicationController
   def index
     post_icons = PostIcon.where(status: :published).includes(:user)
     created_icons = CreatedIcon.where(status: :published).includes(:user)
-    @icons = (post_icons + created_icons).sort_by(&:created_at).reverse
+    icons = (post_icons + created_icons).sort_by(&:created_at).reverse
+    @icons = Kaminari.paginate_array(icons).page(params[:page]).per(10)
   end
 end
