@@ -1,10 +1,11 @@
 <div class="">
   <div class="w-full p-6 m-auto bg-white rounded-md shadow-md sm:max-w-sm">
-     <h1 class="text-3xl font-semibold text-center m-5">アイコン生成</h1>
+    <h1 class="text-3xl font-semibold text-center m-5">アイコン生成</h1>
     <div class= "space-y-4">
       <%= form_with model: @createdicon, local: true do |f| %>
         <%= f.text_field :title, class: "w-full input input-bordered input-accent space-y-4", placeholder: 'キーワード' %>
         <div class='m-7'>
+        <h1 class="text-l font-semibold text-center m-1">テイスト選択</h1>
           <div class='m-1 flex items-center justify-between'>
             <%= f.radio_button :taste, 'cute', id: 'taste_cute', class: 'radio', checked: true %>
             <%= f.label :taste_cute, 'cute', class: 'form-check-label mx-10' %> 
