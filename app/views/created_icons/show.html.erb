@@ -15,12 +15,11 @@
         </div>
       <% end %> 
       <div class="p-2 text-lg font-bold">
-        <p>
-          <%= @createdicon.user.name %> のアイコン
-        </p>
+        <p><%= @createdicon.user.name %> のアイコン</p>
       </div>
     </div>
-    <p class="p-2 text-lg font-bold">タイトル: <%=@createdicon.title%></p>
+    <p class="p-1 text-lg font-bold">タイトル: <%=@createdicon.title%></p>
+    <p class="p-1 text-lg font-bold">テイスト: <%=@createdicon.taste%></p>
     <figure>
       <div class="avatar">
         <div class="w-40 rounded-full ring ring-accent ring-offset-base-100 ring-offset-2 m-3">
