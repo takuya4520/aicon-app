@@ -5,12 +5,31 @@ class OpenaiService
 
   DALLE_API_URL = 'https://api.openai.com/v1/images/generations'
 
-  def self.generate_image_with_dalle3(prompt)
+  def self.icon_prompt(icon)
+    base_prompt = "#{icon.title}の円形のアイコン"
+
+    case icon.taste
+    when "cute"
+      prompt = "#{base_prompt}をアニメスタイルで、可愛らしい表情のキャラクターとして表現する。"
+    when "cool"
+      prompt = "#{base_prompt}をリアリズムで、シャープな輪郭と冷たい色調の背景を持つ印象的なキャラクターとして表現する。"
+    when "simple"
+      prompt = "#{base_prompt}をミニマリズムで、シンプルで洗練されたデザインのキャラクターとして表現する。"
+    else
+      # 予期しない`taste`値の場合のデフォルトプロンプト
+      prompt = "#{base_prompt}を多様なスタイルと色で表現する。具体的な描画方法は指定しない。"
+    end
+    return prompt
+  end
+
+  def self.generate_icon_with_dalle3(icon)
     api_key = Rails.application.credentials.chatgpt_api_key
     headers = {
       'Content-Type' => 'application/json',
       'Authorization' => "Bearer #{api_key}"
     }
+
+    prompt= icon_prompt(icon)
 
     body = {
       model: "dall-e-3",
@@ -27,7 +46,7 @@ class OpenaiService
 
   def self.download_image(prompt)
     begin
-      image_url = generate_image_with_dalle3(prompt)
+      image_url = generate_icon_with_dalle3(prompt)
       file = URI.open(image_url)
       
       blob = ActiveStorage::Blob.create_and_upload!(
