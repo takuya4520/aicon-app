@@ -7,8 +7,7 @@ class CreatedIconsController < ApplicationController
 
   def create
     @createdicon = current_user.created_icons.build(createdicon_params)
-    prompt = @createdicon.title
-    image_key = OpenaiService.download_image(prompt)
+    image_key = OpenaiService.download_image(@createdicon)
     @createdicon.icon.attach(ActiveStorage::Blob.find_by(key: image_key)) if image_key
     if @createdicon.save
       flash[:success] = "Micropost created!"
