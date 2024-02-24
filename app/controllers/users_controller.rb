@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.current_icon.attach(params[:user][:current_icon])
     if @user.save
-      redirect_to login_path
+      login(user_params[:email], user_params[:password])
+      redirect_to root_path
     else
       render :new
     end
