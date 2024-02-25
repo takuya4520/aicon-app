@@ -1,0 +1,11 @@
+<h3>パスワード再設定</h3>
+<%= form_with model: @user, url: password_reset_path(@token) do |f| %>
+  <%= render 'shared/error_message', object: f.object %>
+	<%= f.label :email %>
+  <%= @user.email %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit 'リセット' %>
+<% end %>
