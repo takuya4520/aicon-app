@@ -2,6 +2,9 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   config.hosts << "iconya-app.onrender.com"
+  config.action_mailer.delivery_method = :letter_opener_web # 送信方法を指定
+  config.action_mailer.default_url_options = Settings.default_url_options.to_h
+  config.action_mailer.perform_deliveries = true # メールを実際に送信するかどうかを指定
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
