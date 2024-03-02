@@ -15,7 +15,7 @@ Rails.application.configure do
     password: Rails.application.credentials.gmail_password,
     authentication: 'plain',
     enable_starttls_auto: true 
-  }
+  }# メールを実際に送信するかどうかを指定
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
