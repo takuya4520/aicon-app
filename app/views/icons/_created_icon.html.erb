@@ -1,11 +1,13 @@
 <div class="card m-5 bg-base-200 shadow-xl">
-  <%= link_to (created_icon_path(icon)),data: { turbo: false } do %>
+  <%= link_to (created_icon_path(icon)) do %>
     <div class="avatar mt-5 mx-5 justify-content">
       <div class="w-40 rounded-full ring ring-accent justify-center">
         <%= image_tag icon.icon if icon.icon.attached? %>
       </div>
     </div>
-    <div class="card-body items-center text-center">
+  <% end %>
+  <div class="card-body items-center text-center">
+    <%= link_to (created_icon_path(icon)) do %>
       <div>
         <% if icon.status == "published" %>
           <div class="badge m-2">公開中</div>
@@ -31,8 +33,14 @@
           <%= icon.user.name %>
         </div>
       </div>
-      <p>
-        <%= icon.created_at.to_date %></p>
+    <% end %>
+    <div class='ms-auto'>
+      <% if current_user.like?(icon) %>
+        <%= render 'icons/unlike', { icon: icon } %>
+      <% else %>
+        <%= render 'icons/like', { icon: icon } %>
+      <% end %>
     </div>
- <% end %>
+    <p><%= icon.created_at.to_date %></p>
+  </div>
 </div>
