@@ -44,10 +44,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_03_092401) do
 
   create_table "created_icon_likes", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "post_icon_id", null: false
+    t.integer "created_icon_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "post_icon_id"], name: "index_created_icon_likes_on_user_id_and_post_icon_id", unique: true
+    t.index ["user_id", "created_icon_id"], name: "index_created_icon_likes_on_user_id_and_created_icon_id", unique: true
   end
 
   create_table "created_icons", force: :cascade do |t|
