@@ -2,7 +2,7 @@
 <header>
   <div class="navbar bg-base-100">
     <div class="flex-1">
-      <%= link_to 'あいこん屋', root_path, class: "btn btn-ghost text-xl" %>
+      <%= link_to 'AIcon', root_path, class: "btn btn-ghost text-3xl font-header_name" %>
     </div>
     <div class="flex-none md:hidden">
       <div class="dropdown dropdown-end">
@@ -32,14 +32,14 @@
             <% end %> 
           </div>
           
-          <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+          <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4 font-body_style">
             <li><%= link_to 'マイページ', user_path(current_user) %></li>
             <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
           </ul>
         </div>
     </div>
     <div class="hidden md:block">
-      <ul class="menu menu-horizontal px-1 items-center py-0">
+      <ul class="menu menu-horizontal px-1 items-center py-0 font-body_style">
         <li><%= link_to 'アイコンAI生成', new_created_icon_path %></li>
         <li><%= link_to 'アイコン投稿', new_post_icon_path %></li>
         <li><%= link_to 'みんなのアイコン', icons_path %></li>
@@ -59,7 +59,7 @@
               </div>
             <% end %> 
           </div>
-          <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+          <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4 font-body_style">
             <li><%= link_to 'マイページ', user_path(current_user) %></li>
             <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
           </ul>
