@@ -1,3 +1,0 @@
-<%= link_to created_icon_like_path(current_user.created_icon_likes.find_by(created_icon_id: icon.id)), id: "icon_like-#{icon.id}", data: { turbo_method: :delete } do %>
-  b<i class="bi bi-star"></i>
-<% end %>

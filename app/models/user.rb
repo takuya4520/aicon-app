@@ -28,4 +28,12 @@ class User < ApplicationRecord
   def like?(icon)
     created_icon_like_icons.include?(icon)
   end
+
+  def created_icon_like(icon)
+    created_icon_like_icons << icon
+  end
+
+  def created_icon_unlike(icon)
+    created_icon_like_icons.destroy(icon)
+  end
 end

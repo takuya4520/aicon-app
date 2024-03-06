@@ -6,7 +6,7 @@
       </div>
     </div>
   <% end %>
-  <div class="card-body items-center text-center">
+  <div class="card-body items-center text-center py-2">
     <%= link_to (created_icon_path(icon)) do %>
       <div>
         <% if icon.status == "published" %>
@@ -34,11 +34,11 @@
         </div>
       </div>
     <% end %>
-    <div class='ms-auto'>
+    <div class='text-center'>
       <% if current_user.like?(icon) %>
-        <%= render 'icons/unlike', { icon: icon } %>
+        <%= render 'created_icon_likes/unlike', { icon: icon } %>
       <% else %>
-        <%= render 'icons/like', { icon: icon } %>
+        <%= render 'created_icon_likes/like', { icon: icon } %>
       <% end %>
     </div>
     <p><%= icon.created_at.to_date %></p>
