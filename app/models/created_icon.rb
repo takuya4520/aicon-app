@@ -3,6 +3,7 @@ class CreatedIcon < ApplicationRecord
   has_one_attached :icon do |attachable|
     attachable.variant :display, resize_to_limit: [200, 200]
   end
+  has_many :created_icon_likes, dependent: :destroy
   validates :title, presence: true
   validates :icon, presence: true
 
