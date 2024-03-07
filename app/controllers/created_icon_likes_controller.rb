@@ -1,6 +1,4 @@
 class CreatedIconLikesController < ApplicationController
-
-
   def create
     @created_icon = CreatedIcon.find(params[:icon_id])
     current_user.created_icon_like(@created_icon)

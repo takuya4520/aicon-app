@@ -5,6 +5,7 @@ class PostIcon < ApplicationRecord
   end
   validates :title, presence: true
   validates :icon, presence: true
+  has_many :post_icon_likes, dependent: :destroy
 
   validates :icon,   content_type: { in: %w[image/jpeg image/gif image/png],
                                       message: "must be a valid icon format" },

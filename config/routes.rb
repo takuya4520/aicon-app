@@ -8,13 +8,19 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
 
   resources :users, only: %i[new create show edit update]
-  resources :post_icons
+  resources :post_icons do
+    collection do
+      get :post_icon_likes
+    end
+  end
   resources :created_icons do
     collection do
       get :created_icon_likes
     end
   end
   resources :created_icon_likes, only: %i[create destroy]
+  resources :post_icon_likes, only: %i[create destroy]
   resources :icons, only: %i[index]
+  resources :like_icons, only: %i[index]
   resources :password_resets, only: [:new, :create, :edit, :update]
 end
