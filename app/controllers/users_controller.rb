@@ -19,7 +19,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     post_icons = @user.post_icons.includes(:user)
     created_icons = @user.created_icons.includes(:user)
-    @icons = (post_icons + created_icons).sort_by(&:created_at).reverse
+    icons = (post_icons + created_icons).sort_by(&:created_at).reverse
+    @icons = Kaminari.paginate_array(icons).page(params[:page]).per(10)
   end
 
   def edit
