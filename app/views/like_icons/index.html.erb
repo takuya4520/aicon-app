@@ -1,0 +1,18 @@
+<h1 class="text-3xl font-semibold text-center m-2">お気に入りのアイコン</h1>
+<div class="flex flex-wrap justify-center">
+	<% if @like_icons.present? %>
+		<% @like_icons.each do |icon| %>
+			<% if icon.is_a?(PostIcon) %>
+				<%= render 'post_icon', icon: icon %>
+			<% elsif icon.is_a?(CreatedIcon) %>
+				<%= render 'created_icon', icon: icon %>
+			<% end %>
+		<% end %>
+	<% else %>
+		<p>投稿がありません。</p>
+	<% end %>
+</div>
+
+<div class="flex flex-wrap justify-center">
+  <%= paginate @like_icons %>
+</div>

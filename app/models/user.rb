@@ -25,7 +25,11 @@ class User < ApplicationRecord
   has_many :created_icon_likes, dependent: :destroy
   has_many :created_icon_like_icons, through: :created_icon_likes, source: :created_icon
 
-  def like?(icon)
+  has_many :post_icons
+  has_many :post_icon_likes, dependent: :destroy
+  has_many :post_icon_like_icons, through: :post_icon_likes, source: :post_icon
+
+  def created_icon_like?(icon)
     created_icon_like_icons.include?(icon)
   end
 
@@ -35,5 +39,17 @@ class User < ApplicationRecord
 
   def created_icon_unlike(icon)
     created_icon_like_icons.destroy(icon)
+  end
+
+  def post_icon_like?(icon)
+    post_icon_like_icons.include?(icon)
+  end
+
+  def post_icon_like(icon)
+    post_icon_like_icons << icon
+  end
+
+  def post_icon_unlike(icon)
+    post_icon_like_icons.destroy(icon)
   end
 end
