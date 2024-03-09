@@ -34,13 +34,15 @@
         </div>
       </div>
     <% end %>
-    <div class='text-center'>
-      <% if current_user.created_icon_like?(icon) %>
-        <%= render 'created_icon_likes/unlike', { icon: icon } %>
-      <% else %>
-        <%= render 'created_icon_likes/like', { icon: icon } %>
-      <% end %>
-    </div>
+    <% if logged_in? %>
+      <div class='text-center'>
+        <% if current_user.created_icon_like?(icon) %>
+          <%= render 'created_icon_likes/unlike', { icon: icon } %>
+        <% else %>
+          <%= render 'created_icon_likes/like', { icon: icon } %>
+        <% end %>
+      </div>
+    <% end %>
     <p><%= icon.created_at.to_date %></p>
   </div>
 </div>
