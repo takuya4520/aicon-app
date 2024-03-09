@@ -4,13 +4,13 @@
     <div class= "space-y-4">
       <%= form_with model: @user, local: true do |f| %>
         <%= f.label :name %>
-        <%= f.text_field :name, class: 'w-full input input-bordered input-primary' %>
+        <%= f.text_field :name, class: 'w-full input input-bordered input-primary', required: true %>
         <%= f.label :email %>
-        <%= f.email_field :email, class: 'w-full input input-bordered input-primary' %>
+        <%= f.email_field :email, class: 'w-full input input-bordered input-primary', required: true %>
         <%= f.label :password %>
-        <%= f.password_field :password, class: 'w-full input input-bordered input-primary' %>
+        <%= f.password_field :password, class: 'w-full input input-bordered input-primary', required: true %>
         <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: 'w-full input input-bordered input-primary' %>
+        <%= f.password_field :password_confirmation, class: 'w-full input input-bordered input-primary', required: true %>
         <span class="text-center">
           <%= f.file_field :current_icon, accept: "image/jpeg,image/gif,image/png", class: "file-input w-full max-w-xs m-5" %>
         </span>

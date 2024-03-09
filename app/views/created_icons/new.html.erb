@@ -3,7 +3,7 @@
     <h1 class="text-3xl font-semibold text-center m-5">アイコンAI生成</h1>
     <div class= "space-y-4">
       <%= form_with model: @createdicon, local: true do |f| %>
-        <%= f.text_field :title, class: "w-full input input-bordered input-accent space-y-4", placeholder: 'キーワード' %>
+        <%= f.text_field :title, class: "w-full input input-bordered input-accent space-y-4", placeholder: 'キーワード', required: true %>
         <div class='m-7'>
         <h1 class="text-l font-semibold text-center m-1">テイスト選択</h1>
           <div class='m-1 flex items-center justify-between'>
