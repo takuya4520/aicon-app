@@ -3,6 +3,7 @@
     <h1 class="text-3xl font-semibold text-center">アイコンの編集</h1>
     <div class ="items-center text-center m-2">
       <%= form_with model: @posticon, local: true do |f| %>
+        <%= f.text_field :title, class: "w-full input input-bordered input-primary space-y-4", placeholder: 'タイトル', required: true %>
         <figure>
           <div class="avatar">
             <div class="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 m-3">
