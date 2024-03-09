@@ -13,7 +13,7 @@ class CreatedIconsController < ApplicationController
       flash[:success] = "アイコンが生成されました"
       redirect_to created_icon_path(@createdicon)
     else
-      flash.now[:success] = "アイコンの生成に失敗しました"
+      flash.now[:danger] = "アイコンの生成に失敗しました"
       render :new, status: :unprocessable_entity
     end
   end
