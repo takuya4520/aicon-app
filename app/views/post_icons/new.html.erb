@@ -3,9 +3,9 @@
     <h1 class="text-3xl font-semibold text-center m-5">アイコン投稿</h1>
     <div class= "space-y-4">
       <%= form_with model: @posticon, local: true do |f| %>
-        <%= f.text_field :title, class: "w-full input input-bordered input-primary space-y-4", placeholder: 'タイトル' %>
+        <%= f.text_field :title, class: "w-full input input-bordered input-primary space-y-4", placeholder: 'タイトル', required: true %>
         <span class="icon">
-          <%= f.file_field :icon, accept: "image/jpeg,image/gif,image/png", class: "file-input w-full max-w-xs my-5" %>
+          <%= f.file_field :icon, accept: "image/jpeg,image/gif,image/png", class: "file-input w-full max-w-xs my-5", required: true %>
         </span>
         <div class='text-center m-5'>
           <%= f.submit "投稿", class: "text-center btn" %>
