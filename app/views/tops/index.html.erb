@@ -21,5 +21,20 @@
         <!-- content - end -->
       </div>
     </section>
+    <% if logged_in? %>
+      <div class="text-center mb-5">
+        <%= link_to 'アイコンを作る', new_created_icon_path,class:"btn"%>
+      </div>
+      <div class="text-center">
+        <%= link_to 'アイコンを投稿する', new_post_icon_path,class:"btn", data: { turbo_method: :post } %>
+      </div>
+    <% else %>
+      <div class="text-center mb-5">
+        <%= link_to '始める', login_path,class:"btn"%>
+      </div>
+      <div class="text-center">
+        <%= link_to 'お試し(ゲストログイン)', '/guest_login',class:"btn", data: { turbo_method: :post } %>
+      </div>
+    <% end %>
   </div>
 </div>
