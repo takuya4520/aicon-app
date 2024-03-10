@@ -1,3 +1,25 @@
-<h1 class="text-3xl font-bold underline">
-    Hello world!トップページ
-</h1>
+<div class="bg-white pb-6 sm:pb-8 lg:pb-12">
+  <div class="mx-auto max-w-screen-2xl px-4 md:px-8 mt-2">
+    <section class="flex flex-wrap mt-0 sm:mt-24">
+      <div class="container mx-auto flex mb-16 md:flex-row flex-col items-center">
+      <!-- image - start -->
+        <div class="flex items-center justify-center md:w-1/2 w-full h-80 overflow-hidden">
+          <%= image_tag asset_path("top2.png", size: "250x250"), class:"max-w-full max-h-full" %>
+        </div>
+        <!-- image - end -->
+        <!-- content - start -->
+        <div class="md:w-1/2 flex flex-col text-left md:mx-5 text-theme">
+          <p class="py-1 px-1 whitespace-nowrap text-left">こういう時ありませんか？</p>
+          <div class="chat chat-start">
+            <div class="chat-bubble">SNSのアイコン何にしよう...</div>
+          </div>
+          <div class="chat chat-end">
+            <div class="chat-bubble">なんかいい写真ないな...</div>
+          </div>
+          <div class="text-xl font-bold text-black sm:text-2xl mt-5">そんなあなたへ<br/><br/>アイコン探し お手伝いします。</div>
+        </div>
+        <!-- content - end -->
+      </div>
+    </section>
+  </div>
+</div>
