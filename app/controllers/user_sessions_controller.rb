@@ -27,7 +27,7 @@ class UserSessionsController < ApplicationController
     password_confirmation: 'password'
     )
     auto_login(@guest_user)
-    flash[:success] = "ゲストとしてログインしました"
+    flash[:success] = "ゲストとしてログインしました。再度ログインできないので注意してください。"
     redirect_to root_path
   end
 end
