@@ -1,3 +1,38 @@
-<h1 class="text-3xl font-bold underline">
-    Hello world!トップページ
-</h1>
+<div class="bg-white pb-6 sm:pb-8 lg:pb-12">
+  <div class="mx-auto max-w-screen-2xl px-4 md:px-8 mt-2">
+    <section class="flex flex-wrap">
+      <div class="container mx-auto flex md:mt-20 md:flex-row flex-col items-center">
+      <!-- image - start -->
+        <div class="flex items-center justify-center md:w-1/2 w-full h-80 overflow-hidden">
+          <%= image_tag asset_path("top2.png", size: "250x250"), class:"max-w-full max-h-full" %>
+        </div>
+        <!-- image - end -->
+        <!-- content - start -->
+        <div class="md:w-1/2 flex flex-col text-left md:mx-5">
+          <p class="py-1 px-1 whitespace-nowrap text-left">こういう時、ありませんか？</p>
+          <div class="chat chat-start">
+            <div class="chat-bubble">SNSのアイコン何にしよう...</div>
+          </div>
+          <div class="chat chat-end">
+            <div class="chat-bubble">なんかいい写真ないな...</div>
+          </div>
+          <div class="text-xl font-bold text-black sm:text-2xl mt-5">そんなあなたへ<br/><br/>アイコン探し お手伝いします。</div>
+        </div>
+        <!-- content - end -->
+      </div>
+    </section>
+    <% if logged_in? %>
+      <div class="text-center m-5">
+        <%= link_to 'アイコンを作る', new_created_icon_path,class:"btn btn-outline btn-secondary m-5"%>
+        <%= link_to 'アイコンを投稿する', new_post_icon_path,class:"btn btn-outline btn-secondary m-5", data: { turbo_method: :post } %>
+      </div>
+    <% else %>
+      <div class="text-center m-5">
+        <%= link_to '始める', login_path, class:"btn btn-outline btn-secondary m-5"%>
+        <div class="tooltip tooltip-open tooltip-top m-5" data-tip="まずは">
+          <%= link_to 'お試し(ゲストログイン)', '/guest_login',class:"btn btn-outline btn-secondary", data: { turbo_method: :post } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
