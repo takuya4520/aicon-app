@@ -10,9 +10,10 @@ class CreatedIconsController < ApplicationController
     image_key = OpenaiService.download_image(@createdicon)
     @createdicon.icon.attach(ActiveStorage::Blob.find_by(key: image_key)) if image_key
     if @createdicon.save
-      flash[:success] = "Micropost created!"
-      redirect_to icons_url
+      flash[:success] = "アイコンが生成されました"
+      redirect_to created_icon_path(@createdicon)
     else
+      flash.now[:danger] = "アイコンの生成に失敗しました"
       render :new, status: :unprocessable_entity
     end
   end
@@ -26,7 +27,8 @@ class CreatedIconsController < ApplicationController
 
   def update
     if @createdicon.update(createdicon_params)
-      redirect_to created_icon_path(@createdicon), notice: "アウトプットを編集しました"
+      flash[:success] = "アイコンを編集しました"
+      redirect_to created_icon_path(@createdicon)
     else
       flash.now[:danger] = "編集に失敗しました"
       render icons_url

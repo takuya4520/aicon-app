@@ -9,8 +9,10 @@ class UsersController < ApplicationController
     @user.current_icon.attach(params[:user][:current_icon])
     if @user.save
       login(user_params[:email], user_params[:password])
+      flash[:success] = "ログインしました"
       redirect_to root_path
     else
+      flash.now[:error] = '新規登録に失敗しました'
       render :new
     end
   end
@@ -30,7 +32,8 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      redirect_to user_path(current_user), notice: "アウトプットを編集しました"
+      flash[:success] = "ユーザー情報を編集しました"
+      redirect_to user_path(current_user)
     else
       flash.now[:danger] = "編集に失敗しました"
       render :edit
