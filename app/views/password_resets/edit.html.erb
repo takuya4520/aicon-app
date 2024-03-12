@@ -1,11 +1,17 @@
-<h3>パスワード再設定</h3>
-<%= form_with model: @user, url: password_reset_path(@token) do |f| %>
-  <%= render 'shared/error_message', object: f.object %>
-	<%= f.label :email %>
-  <%= @user.email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit 'リセット' %>
-<% end %>
+<div class= "mx-5">
+  <div class="p-6 m-auto bg-slate-50 rounded-md shadow-md sm:max-w-md mt-5 sm:mt-20">
+    <h1 class="text-3xl font-semibold text-center">パスワード再設定</h1>
+    <div class= "space-y-4 mt-5">
+      <%= form_with model: @user, url: password_reset_path(@token) do |f| %>
+        <%= render 'shared/error_message', object: f.object %>
+        <%= f.label :email %>
+        : <%= @user.email %><br/><br/>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'w-full input input-bordered input-primary mt-2',required: true %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'w-full input input-bordered input-primary mt-2',required: true %>
+        <%= f.submit 'リセット', class: 'btn my-3 text-center' %>
+      <% end %>
+    </div>
+  </div>
+</div>

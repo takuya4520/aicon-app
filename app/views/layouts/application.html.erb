@@ -12,14 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
   </head>
 
-  <body>
+  <body class= "bg-sky-50 flex flex-col min-h-screen">
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% else %>
       <%= render 'shared/before_login_header' %>
     <% end %>
     <%= render 'layouts/flash_messages' %>
-    <div class= "font-body_style">
+    <div class= "font-body_style flex-grow">
       <%= yield %>
     </div>
     <%= render 'shared/footer' %>
