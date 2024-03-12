@@ -30,6 +30,7 @@ class PasswordResetsController < ApplicationController
       redirect_to login_path
       flash[:success]= 'パスワードがリセットされました'
     else
+      flash.now[:error] = 'パスワードリセットに失敗しました'
       render action: 'edit'
     end
   end
