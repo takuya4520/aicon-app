@@ -1,84 +1,84 @@
-<div class="">
-  <div class="w-full p-6 m-auto bg-white rounded-md shadow-md sm:max-w-sm">
-    <h1 class="text-3xl font-semibold text-center m-5">アイコンAI生成</h1>
-    <div class= "space-y-4">
-      <%= form_with model: @createdicon, local: true do |f| %>
-        <%= f.text_field :title, class: "w-full input input-bordered input-accent space-y-4", placeholder: 'キーワード', required: true %>
-        <div class='m-7'>
-        <h1 class="text-l font-semibold text-center m-1">テイスト選択</h1>
-          <div class='m-1 flex items-center justify-between'>
-            <%= f.radio_button :taste, 'cute', id: 'taste_cute', class: 'radio', checked: true %>
-            <%= f.label :taste_cute, 'cute', class: 'form-check-label mx-10' %> 
-            <div class='inset-y-0 right-0"'>
-              <label for="my_modal_1" class="btn btn-ghost"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></label>
-              <!-- Put this part before </body> tag -->
-              <input type="checkbox" id="my_modal_1" class="modal-toggle" />
-              <div class="modal" role="dialog">
-                <div class="modal-box">
-                  <h3 class="font-bold text-lg text-center m-2">cute</h3>
-                  <div class="avatar flex justify-center">
-                    <div class="w-60 rounded-full  ring-offset-2">
-                        <%= image_tag asset_path("cute2.png") %>
-                    </div>
-                  </div>
-                  <p class="py-2 text-center m-3">可愛らしいアイコンのテイスト</p>
-                  <div class="modal-action">
-                    <label for="my_modal_1" class="btn">Close</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> 
-          <div class='m-1 flex items-center justify-between'>
-            <%= f.radio_button :taste, 'cool', id: 'taste_cool', class: 'radio' %>
-            <%= f.label :taste_cool, 'cool', class: 'form-check-label mx-10' %>
-            <label for="my_modal_2" class="btn btn-ghost "><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></label>
+<div class= "mx-5">
+<div class="p-6 m-auto bg-slate-50 rounded-md shadow-md sm:max-w-sm mt-5 sm:mt-20">
+  <h1 class="text-3xl font-semibold text-center mb-5">アイコンAI生成</h1>
+  <div class= "space-y-4">
+    <%= form_with model: @createdicon, local: true do |f| %>
+      <%= f.text_field :title, class: "w-full input input-bordered input-accent space-y-4", placeholder: 'キーワード', required: true %>
+      <div class='m-7'>
+      <h1 class="text-l font-semibold text-center m-1">テイスト選択</h1>
+        <div class='m-1 flex items-center justify-between'>
+          <%= f.radio_button :taste, 'cute', id: 'taste_cute', class: 'radio', checked: true %>
+          <%= f.label :taste_cute, 'cute', class: 'form-check-label mx-10' %> 
+          <div class='inset-y-0 right-0"'>
+            <label for="my_modal_1" class="btn btn-ghost"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></label>
             <!-- Put this part before </body> tag -->
-            <input type="checkbox" id="my_modal_2" class="modal-toggle" />
+            <input type="checkbox" id="my_modal_1" class="modal-toggle" />
             <div class="modal" role="dialog">
               <div class="modal-box">
-                <h3 class="font-bold text-lg text-center m-2">cool</h3>
+                <h3 class="font-bold text-lg text-center m-2">cute</h3>
                 <div class="avatar flex justify-center">
                   <div class="w-60 rounded-full  ring-offset-2">
-                      <%= image_tag asset_path("cool.png") %>
+                      <%= image_tag asset_path("cute2.png") %>
                   </div>
                 </div>
-                <p class="py-2 text-center m-3">リアリティがあるクールなアイコンのテイスト</p>
+                <p class="py-2 text-center m-3">可愛らしいアイコンのテイスト</p>
                 <div class="modal-action">
-                  <label for="my_modal_2" class="btn">Close</label>
+                  <label for="my_modal_1" class="btn">Close</label>
                 </div>
               </div>
             </div>
           </div>
-          <div class='m-1 flex items-center justify-between'>
-            <%= f.radio_button :taste, 'simple', id: 'taste_simple', class: 'radio' %>
-            <%= f.label :taste_simple, 'simple', class: 'form-check-label mx-10' %>
-            <label for="my_modal_3" class="btn btn-ghost "><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></label>
-            <!-- Put this part before </body> tag -->
-            <input type="checkbox" id="my_modal_3" class="modal-toggle" />
-            <div class="modal" role="dialog">
-              <div class="modal-box">
-                <h3 class="font-bold text-lg text-center m-2">simple</h3>
-                <div class="avatar flex justify-center">
-                  <div class="w-60 rounded-full  ring-offset-2">
-                      <%= image_tag asset_path("simple.png") %>
-                  </div>
+        </div> 
+        <div class='m-1 flex items-center justify-between'>
+          <%= f.radio_button :taste, 'cool', id: 'taste_cool', class: 'radio' %>
+          <%= f.label :taste_cool, 'cool', class: 'form-check-label mx-10' %>
+          <label for="my_modal_2" class="btn btn-ghost "><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></label>
+          <!-- Put this part before </body> tag -->
+          <input type="checkbox" id="my_modal_2" class="modal-toggle" />
+          <div class="modal" role="dialog">
+            <div class="modal-box">
+              <h3 class="font-bold text-lg text-center m-2">cool</h3>
+              <div class="avatar flex justify-center">
+                <div class="w-60 rounded-full  ring-offset-2">
+                    <%= image_tag asset_path("cool.png") %>
                 </div>
-                <p class="py-2 text-center m-3">白黒でのシンプルなアイコンのテイスト</p>
-                <div class="modal-action">
-                  <label for="my_modal_3" class="btn">Close</label>
-                </div>
+              </div>
+              <p class="py-2 text-center m-3">リアリティがあるクールなアイコンのテイスト</p>
+              <div class="modal-action">
+                <label for="my_modal_2" class="btn">Close</label>
               </div>
             </div>
           </div>
         </div>
-        <div class='text-center'>
-          <%= f.submit "生成", class: "text-center btn" %>
+        <div class='m-1 flex items-center justify-between'>
+          <%= f.radio_button :taste, 'simple', id: 'taste_simple', class: 'radio' %>
+          <%= f.label :taste_simple, 'simple', class: 'form-check-label mx-10' %>
+          <label for="my_modal_3" class="btn btn-ghost "><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></label>
+          <!-- Put this part before </body> tag -->
+          <input type="checkbox" id="my_modal_3" class="modal-toggle" />
+          <div class="modal" role="dialog">
+            <div class="modal-box">
+              <h3 class="font-bold text-lg text-center m-2">simple</h3>
+              <div class="avatar flex justify-center">
+                <div class="w-60 rounded-full  ring-offset-2">
+                    <%= image_tag asset_path("simple.png") %>
+                </div>
+              </div>
+              <p class="py-2 text-center m-3">白黒でのシンプルなアイコンのテイスト</p>
+              <div class="modal-action">
+                <label for="my_modal_3" class="btn">Close</label>
+              </div>
+            </div>
+          </div>
         </div>
-      <% end %>
-    <div>
-    <div class='text-center link link-neutral m-2'>
-      <%= link_to 'アイコン一覧へ', icons_path %>
-    </div>
+      </div>
+      <div class='text-center m-5'>
+        <%= f.submit "生成", class: "text-center btn" %>
+      </div>
+    <% end %>
+  </div>
+  <div class='text-center link link-neutral m-2'>
+    <%= link_to 'アイコン一覧へ', icons_path %>
+  </div>
   </div>
 </div>
