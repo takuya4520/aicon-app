@@ -1,0 +1,36 @@
+
+<div class="mx-5">
+  <div class="p-6 m-auto bg-slate-50 rounded-md shadow-md sm:max-w-sm mt-5 sm:mt-20">
+    <h1 class="text-3xl font-semibold text-center m-5">マイページ編集</h1>
+    <div class= "space-y-4 text-center">
+      <%= form_with model: @user, url: profile_path, local: true do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'w-full input input-bordered input-primary space-y-4' %>
+        <figure>
+          <% if current_user.current_icon.attached?%>
+            <div class="avatar m-3 text-center">
+              <div class="w-40 rounded-full ring ring-success ring-offset-base-100 ring-offset-2 m-3">
+                  <%= image_tag @user.current_icon %>
+              </div>
+            </div>
+          <% else %>  
+            <div class="avatar placeholder m-3 text-center">
+              <div class="bg-neutral text-neutral-content rounded-full ring ring-success w-40 m-3">
+                <span class="text-l"><%=@user.name%></span>
+              </div>
+            </div>
+          <% end %> 
+        </figure>
+        <span class="icon">
+          <%= f.file_field :current_icon, accept: "image/jpeg,image/gif,image/png", class: "file-input w-full max-w-xs mt-2" %>
+        </span>
+        <div class='text-center'>
+          <%= f.submit "変更", class: "text-center btn mt-2" %>
+        </div>
+      <% end %>
+      <div class='text-center link link-neutral'>
+        <%= link_to 'アイコン一覧へ', icons_path %>
+      </div>
+    </div>
+  </div>
+</div>

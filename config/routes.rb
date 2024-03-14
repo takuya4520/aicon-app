@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   post '/guest_login', to: 'user_sessions#guest_login'
 
-  resources :users, only: %i[new create show edit update]
+  resources :users, only: %i[new create]
+  resource :profile, only: %i[show edit update]
   resources :post_icons do
     collection do
       get :post_icon_likes
