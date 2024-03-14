@@ -33,7 +33,7 @@
           </div>
           
           <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4 font-body_style">
-            <li><%= link_to 'マイページ', user_path(current_user) %></li>
+            <li><%= link_to 'マイページ', profile_path %></li>
             <li><%= link_to 'お気に入りのアイコン', like_icons_path(current_user) %></li>
             <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
           </ul>
@@ -61,7 +61,7 @@
             <% end %> 
           </div>
           <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4 font-body_style">
-            <li><%= link_to 'マイページ', user_path(current_user) %></li>
+            <li><%= link_to 'マイページ', profile_path %></li>
             <li><%= link_to 'お気に入りのアイコン', like_icons_path(current_user) %></li>
             <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }  %></li>
           </ul>
