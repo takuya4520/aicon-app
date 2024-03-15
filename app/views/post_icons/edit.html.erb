@@ -11,12 +11,15 @@
             </div>
           </div>
         </figure>
-        <div class='text-center my-4'>
-          <%= f.radio_button :status, 'published', id: 'status_published', class: 'radio' %>
-          <%= f.label :status_published, '公開', class: 'form-check-label' %>  
-          
-          <%= f.radio_button :status, 'unpublished', id: 'status_unpublished', class: 'radio' %>
-          <%= f.label :status_unpublished, '非公開', class: 'form-check-label' %>
+        <div class='my-4 flex items-center justify-center'>
+          <div class="mx-2 flex items-center">
+            <%= f.radio_button :status, 'published', id: 'status_published', class: 'radio' %>
+            <%= f.label :status_published, '公開', class: 'form-check-label' %>  
+          </div>
+          <div class="mx-2 flex items-center">
+            <%= f.radio_button :status, 'unpublished', id: 'status_unpublished', class: 'radio' %>
+            <%= f.label :status_unpublished, '非公開', class: 'form-check-label' %>
+          </div>
         </div>
         <div class='text-center'>
           <%= f.submit "変更", class: "text-center btn m-3" %>
