@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
     @user = login(params[:email], params[:password])
     if @user
       flash[:success] = "ログインしました"
-      redirect_back_or_to root_path
+      redirect_back_or_to new_created_icon_path
     else
       flash.now[:error] = 'ログインに失敗しました'
       render :new, status: :unprocessable_entity
@@ -28,6 +28,6 @@ class UserSessionsController < ApplicationController
     )
     auto_login(@guest_user)
     flash[:success] = "ゲストとしてログインしました。再度ログインできないので注意してください。"
-    redirect_to root_path
+    redirect_to new_created_icon_path
   end
 end
