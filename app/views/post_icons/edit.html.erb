@@ -1,5 +1,5 @@
-<div class="card">
-  <div class="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-lg">
+<div class="m-5">
+  <div class="w-full p-6 m-auto bg-slate-50 rounded-md shadow-md lg:max-w-lg">
     <h1 class="text-3xl font-semibold text-center">アイコンの編集</h1>
     <div class ="items-center text-center m-2">
       <%= form_with model: @posticon, local: true do |f| %>
@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class='text-center'>
-          <%= f.submit "変更", class: "text-center btn m-3" %>
+          <%= f.submit "変更", class: "text-center btn m-3 rounded-md shadow-md" %>
         </div>
       <% end %>
       <div class='m-5'>
