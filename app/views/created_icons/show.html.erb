@@ -29,10 +29,10 @@
     </figure>
     <div class="m-5">
       <% if current_user == @createdicon.user %>
-        <%= link_to "編集", edit_created_icon_path(@createdicon),class: "text-xl link px-5"%>
+        <%= link_to "公開設定", edit_created_icon_path(@createdicon),class: "text-xl link px-5"%>
         <%= link_to "削除", created_icon_path(@createdicon),class: "text-xl link link-error px-5", data: { turbo_method: :delete } %>
       <% end %>
     </div>
-    <%= link_to "一覧へ", icons_path , class:"link link-neutral text-xl" %>
+    <%= link_to "アイコン一覧へ", icons_path , class:"link link-neutral text-xl" %>
   </div>
 </div>

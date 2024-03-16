@@ -16,7 +16,11 @@
           <div class="chat chat-end">
             <div class="chat-bubble">なんかいい写真ないな...</div>
           </div>
-          <div class="text-l font-bold text-black sm:text-2xl mt-5">そんなあなたへ<br/>アイコン作成 お手伝いします。</div>
+          <div class="text-l font-bold text-black sm:text-2xl mt-5">
+          <span class="badge badge-accent badge-outline badge-lg mb-1">そんなあなたへ</span>
+          <br/>
+          生成AIで アイコン作成 お手伝いします。
+          </div>
         </div>
         <!-- content - end -->
       </div>
@@ -24,13 +28,70 @@
     <% if logged_in? %>
       <div class="text-center m-5  md:mb-10">
         <%= link_to 'アイコンを作る', new_created_icon_path,class:"btn btn-outline btn-secondary m-5"%>
-        <%= link_to 'アイコンを投稿する', new_post_icon_path,class:"btn btn-outline btn-secondary m-5", data: { turbo_method: :post } %>
+        <%= link_to 'アイコンを投稿する', new_post_icon_path,class:"btn btn-outline btn-secondary m-5"%>
       </div>
     <% else %>
       <div class="text-center m-5  md:mb-10">
-        <%= link_to '始める', login_path, class:"btn btn-outline btn-secondary m-5"%>
-        <div class="tooltip tooltip-open tooltip-top m-5" data-tip="まずは">
-          <%= link_to 'お試し(ゲストログイン)', '/guest_login',class:"btn btn-outline btn-secondary", data: { turbo_method: :post } %>
+       
+        <div class='inset-y-0 right-0"'>
+            <label for="my_modal_1" class="btn btn-outline btn-secondary m-5">始める</label>
+            <!-- Put this part before </body> tag -->
+            <input type="checkbox" id="my_modal_1" class="modal-toggle" />
+            <div class="modal" role="dialog">
+              <div class="card bg-sky-50 flex flex-wrap justify-center">
+                <div class="card bg-slate-50 rounded-md shadow-md mx-5 mt-5">
+                  <div class="card-body items-center text-center">
+                    <h2 class="card-title">新規登録</h2>
+                    <p>初めてのご利用の方はこちらから</p>
+                    <div class="card-actions justify-end">
+                      <%= link_to '新規登録ページへ', new_user_path, class:"btn btn btn-outline btn-secondary mt-2"%>
+                    </div>
+                  </div>
+                </div>
+                <div class="card bg-slate-50 rounded-md shadow-md mx-5 mt-5">
+                  <div class="card-body items-center text-center">
+                    <h2 class="card-title">ログイン</h2>
+                    <p>すでに登録済みの方はこちらから</p>
+                    <div class="card-actions justify-end">
+                      <%= link_to 'ログインページへ', login_path, class:"btn btn btn-outline btn-secondary mt-2"%>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="modal-action">
+                  <label for="my_modal_1" class="btn mb-2 mr-2">Close</label>
+              </div>
+              </div>
+            </div>
+          </div>
+        <div class="tooltip tooltip-open tooltip-bottom m-5" data-tip="まずは">
+          <label for="my_modal_2" class="btn btn-outline btn-secondary">お試し(ゲストログイン)</label>
+            <!-- Put this part before </body> tag -->
+            <input type="checkbox" id="my_modal_2" class="modal-toggle" />
+            <div class="modal" role="dialog">
+              <div class="card bg-sky-50 flex flex-wrap justify-center m-2">
+                <div class="card bg-slate-50 rounded-md shadow-md mx-5 mt-5">
+                  <div class="card-body items-center text-center">
+                    <h2 class="card-title">お試し(ゲストログイン)</h2>
+                    <p>お試しでご利用される方はこちらから
+                      <br/>
+                      全ての機能をご利用いただけます。
+                    </p>
+                    <div role="alert" class="alert alert-warning mt-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                      <span>再度ログインできません。</span>
+                    </div>
+                    <div class="card-actions justify-end">
+                      <%= link_to 'いますぐ試す', '/guest_login',class:"btn btn-outline btn-secondary mt-5", data: { turbo_method: :post } %>
+                    </div>
+                  </div>
+                </div>
+              <div class="modal-action">
+                  <label for="my_modal_2" class="btn mb-2 mr-2">Close</label>
+              </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>
