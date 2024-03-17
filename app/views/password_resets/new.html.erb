@@ -4,7 +4,7 @@
     <div class= "space-y-4 mt-5">
       <%= form_with url: password_resets_path, local: true do |f| %>
         <%= f.label :email %>
-        <%= f.text_field :email, class: 'w-full input input-bordered input-primary mt-2' %>
+        <%= f.text_field :email, class: 'w-full input input-bordered input-primary mt-2',required: true %>
         <%= f.submit '申請', class: 'btn my-3 text-center' %>
       <% end %>
     </div>
