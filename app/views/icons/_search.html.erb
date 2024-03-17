@@ -1,7 +1,6 @@
 <div class="flex items-center justify-center mt-5">
 <%= form_with url: icons_path, method: :get, local: true do |f| %>
   <%= f.text_field :search, value: params[:search], placeholder: "キーワードを入力", class: "input input-bordered" %>
-
   <%= f.submit "検索", class: "btn btn-outline btn-neutral" %>
 <% end %>
 </div>
