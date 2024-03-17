@@ -10,14 +10,14 @@ class OpenaiService
 
     case icon.taste
     when "cute"
-      prompt = "#{base_prompt}をアニメスタイルで、可愛らしい表情のキャラクターとして表現する。"
+      prompt = "'#{base_prompt}'をアニメスタイルで、可愛らしい表情のキャラクターとして表現する。"
     when "cool"
-      prompt = "#{base_prompt}をリアリズムで、シャープな輪郭と冷たい色調の背景を持つ印象的なキャラクターとして表現する。"
+      prompt = "'#{base_prompt}'をリアリズムで、シャープな輪郭と冷たい色調の背景を持つ印象的なキャラクターとして表現する。"
     when "simple"
-      prompt = "#{base_prompt}をミニマリズムで、シンプルで洗練されたデザインのキャラクターとして表現する。"
+      prompt = "'#{base_prompt}'をミニマリズムで、シンプルで洗練されたデザインのキャラクターとして表現する。"
     else
       # 予期しない`taste`値の場合のデフォルトプロンプト
-      prompt = "#{base_prompt}を多様なスタイルと色で表現する。具体的な描画方法は指定しない。"
+      prompt = "'#{base_prompt}'を多様なスタイルと色で表現する。具体的な描画方法は指定しない。"
     end
     return prompt
   end
