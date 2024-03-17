@@ -1,4 +1,5 @@
 class CreatedIconsController < ApplicationController
+  skip_before_action :require_login, only: %i[show]
   before_action :set_createdicon, only: %i[edit update destroy]
 
   def new
