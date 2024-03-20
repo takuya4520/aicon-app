@@ -1,14 +1,24 @@
 <div class="mx-5">
   <div class="p-6 m-auto bg-slate-50 rounded-md shadow-md sm:max-w-sm mt-5 sm:mt-20">
-    <h1 class="text-3xl font-semibold text-center m-5">アイコン保存</h1>
+    <h1 class="text-3xl font-semibold text-center m-5">アイコンの保存</h1>
     <div class= "space-y-4">
       <%= form_with model: @posticon, local: true do |f| %>
         <%= f.text_field :title, class: "w-full input input-bordered input-primary space-y-4", placeholder: 'タイトル', required: true %>
         <span class="icon">
           <%= f.file_field :icon, accept: "image/jpeg,image/gif,image/png", class: "file-input w-full max-w-xs my-5", required: true %>
         </span>
+        <div class='my-4 flex items-center justify-center'>
+          <div class="mx-2 flex items-center">
+            <%= f.radio_button :status, 'published', id: 'status_published', class: 'radio' %>
+            <%= f.label :status_published, '公開', class: 'form-check-label' %>  
+          </div>
+          <div class="mx-2 flex items-center">
+            <%= f.radio_button :status, 'unpublished', id: 'status_unpublished', class: 'radio', checked: true %>
+            <%= f.label :status_unpublished, '非公開', class: 'form-check-label' %>
+          </div>
+        </div>
         <div class='text-center m-5'>
-          <%= f.submit "投稿", class: "text-center btn" %>
+          <%= f.submit "保存", class: "text-center btn" %>
         </div>
       <% end %>
       <div class='text-center link link-neutral'>
