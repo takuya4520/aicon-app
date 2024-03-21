@@ -64,7 +64,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = {protocol: 'https', host: 'iconya-app.onrender.com'}
+  config.action_mailer.default_url_options = {protocol: 'https', host: 'www.aicon-app.com'}
 
   config.action_mailer.raise_delivery_errors = true
 
