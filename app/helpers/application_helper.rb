@@ -30,7 +30,7 @@ module ApplicationHelper
       keywords:,
       canonical: request.original_url,
       icon: {
-        href: image_url('og_image.png')
+        href: image_url('favicon.png')
       },
       og: {
         type: 'website',
