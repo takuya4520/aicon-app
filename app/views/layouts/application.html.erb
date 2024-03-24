@@ -3,15 +3,11 @@
   <head>
     <title>A.Icon</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:url" content="https://www.aicon-app.com" />
-    <meta property="og:title" content="A.Icon" />
-    <meta property="og:description" content="生成AIで アイコン作成 お手伝いします。" /> 
-    <meta property="og:image" content="<%= image_url "og_image.png" %>" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= favicon_link_tag('favicon.png') %>
+    
+    <!-- Metaタグ -->
+    <%= show_meta_tags %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
