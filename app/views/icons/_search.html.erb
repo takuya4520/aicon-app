@@ -1,6 +1,8 @@
-<div class="flex items-center justify-center mt-5">
-<%= form_with url: icons_path, method: :get, local: true do |f| %>
-  <%= f.text_field :search, value: params[:search], placeholder: "キーワードを入力", class: "input input-bordered" %>
-  <%= f.submit "検索", class: "btn btn-outline btn-neutral" %>
-<% end %>
+<div class="flex flex-wrap w-full items-end justify-center sm:px-0 px-5">
+   <%= form_with url: icons_path, method: :get, local: true do |f| %>
+      <%= f.select :taste, ["simple", "cool", "cute"],{ include_blank: 'テイスト選択' },
+                  class: "border btn-outline rounded-lg py-3 px-2 h-12 m-1 bg-slate-50" %>
+      <%= f.text_field :search, value: params[:search], placeholder: "キーワードを入力", class: "border btn-outline rounded-lg py-3 pl-2 sm:w-52 h-12 m-1 bg-slate-50" %>
+      <%= f.submit "検索", class: "border rounded-lg py-3 px-2 btn-outline mt-1 mx-1 bg-slate-50" %>
+   <% end %>
 </div>

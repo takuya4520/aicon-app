@@ -48,10 +48,15 @@ class OpenaiService
     begin
       image_url = generate_icon_with_dalle3(prompt)
       file = URI.open(image_url)
-      
+      # 現在のタイムスタンプをフォーマットして取得
+      timestamp = Time.now.strftime("%Y%m%d_%H%M%S")
+
+      # ファイル名にタイムスタンプを追加
+      filename = "icon_#{timestamp}.png"
+
       blob = ActiveStorage::Blob.create_and_upload!(
         io: file,
-        filename: file.base_uri.to_s.split('/').last,
+        filename: filename,
         content_type: 'image/png'
       )
 
