@@ -41,7 +41,7 @@ module ApplicationHelper
         site_name: site
       },
       twitter: {
-        site:,
+        site: '@takuywater',
         card: 'summary_large_image',
         image:
       }
