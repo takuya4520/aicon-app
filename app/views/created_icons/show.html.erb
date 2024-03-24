@@ -33,18 +33,29 @@
 
     <div class ="text-center m-2">
       <% if current_user == @createdicon.user %>
+        <%= link_to rails_blob_path(@createdicon.icon, disposition: "attachment"), download: "" do%>
+          <div class="btn rounded-md shadow-md m-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+          </svg>
+          ダウンロード
+          </div>
+        <% end %>
+
         <%= link_to "https://twitter.com/share?url=#{created_icon_url(@createdicon)}&text=アイコンを生成したよ！
         %0a【キーワード: #{@createdicon.title}】
         %0a%20%23AIcon
         %20%23RUNTEQ祭
         @takuywater%0a",
-        title: 'Twitter',class:'btn rounded-md shadow-md mx-3', target: '_blank' do %>
+        title: 'Twitter',class:'btn rounded-md shadow-md m-3', target: '_blank' do %>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
             <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
           </svg> シェア
         <% end %>
       <% end %>
       </div>
+
       <div class="m-5 flex justify-center">
        <% if current_user == @createdicon.user %>
           <%= link_to edit_created_icon_path(@createdicon) do %>
