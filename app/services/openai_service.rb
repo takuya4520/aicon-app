@@ -52,12 +52,12 @@ class OpenaiService
       timestamp = Time.now.strftime("%Y%m%d_%H%M%S")
 
       # ファイル名にタイムスタンプを追加
-      filename = "icon_#{timestamp}.png"
+      filename = "icon_#{timestamp}.webp"
 
       blob = ActiveStorage::Blob.create_and_upload!(
         io: file,
         filename: filename,
-        content_type: 'image/png'
+        content_type: 'image/webp'
       )
 
       file.close
