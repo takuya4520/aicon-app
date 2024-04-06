@@ -2,7 +2,7 @@
   <%= link_to (created_icon_path(icon)) do %>
     <div class="avatar mt-5 mx-5 justify-content">
       <div class="w-40 rounded-full ring ring-accent justify-center">
-        <%= image_tag icon.icon if icon.icon.attached? %>
+        <%= image_tag icon.icon.variant(resize: '200x200').processed if icon.icon.attached? %>
       </div>
     </div>
   <% end %>
