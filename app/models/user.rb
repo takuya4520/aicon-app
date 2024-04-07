@@ -19,13 +19,12 @@ class User < ApplicationRecord
 
   validates :reset_password_token, presence: true, uniqueness: true, allow_nil: true
   
-  has_many :post_icons
 
-  has_many :created_icons
+  has_many :created_icons, dependent: :destroy
   has_many :created_icon_likes, dependent: :destroy
   has_many :created_icon_like_icons, through: :created_icon_likes, source: :created_icon
 
-  has_many :post_icons
+  has_many :post_icons, dependent: :destroy
   has_many :post_icon_likes, dependent: :destroy
   has_many :post_icon_like_icons, through: :post_icon_likes, source: :post_icon
 
