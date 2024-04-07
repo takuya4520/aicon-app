@@ -1,8 +1,15 @@
 class PostIconsController < ApplicationController
   before_action :set_posticon, only: %i[edit update destroy]
 
+  def show
+    @posticon= PostIcon.find(params[:id])
+  end
+
   def new
     @posticon = PostIcon.new
+  end
+
+  def edit
   end
 
   def create
@@ -15,13 +22,6 @@ class PostIconsController < ApplicationController
       flash.now[:danger] = "アイコンの投稿に失敗しました"
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
-    @posticon= PostIcon.find(params[:id])
-  end
-
-  def edit
   end
 
   def update

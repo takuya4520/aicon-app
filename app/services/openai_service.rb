@@ -49,7 +49,7 @@ class OpenaiService
       image_url = generate_icon_with_dalle3(prompt)
       file = URI.open(image_url)
       # 現在のタイムスタンプをフォーマットして取得
-      timestamp = Time.now.strftime("%Y%m%d_%H%M%S")
+      timestamp = Time.zone.now.strftime("%Y%m%d_%H%M%S")
 
       # ファイル名にタイムスタンプを追加
       filename = "icon_#{timestamp}.webp"

@@ -8,7 +8,7 @@ class IconsController < ApplicationController
     
 
     elsif params[:taste].present?
-      created_icons = CreatedIcon.where("taste = ?", params[:taste]).where(status: :published).includes(:user)
+      created_icons = CreatedIcon.where(taste: params[:taste]).where(status: :published).includes(:user)
       icons = created_icons.sort_by(&:created_at).reverse
 
     elsif params[:search].present?
