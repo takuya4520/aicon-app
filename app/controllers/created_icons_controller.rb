@@ -2,8 +2,15 @@ class CreatedIconsController < ApplicationController
   skip_before_action :require_login, only: %i[show]
   before_action :set_createdicon, only: %i[edit update destroy]
 
+  def show
+    @createdicon = CreatedIcon.find(params[:id])
+  end
+
   def new
     @createdicon =  CreatedIcon.new
+  end
+
+  def edit
   end
 
   def create
@@ -17,13 +24,6 @@ class CreatedIconsController < ApplicationController
       flash.now[:danger] = "アイコンの生成に失敗しました"
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
-    @createdicon = CreatedIcon.find(params[:id])
-  end
-
-  def edit
   end
 
   def update

@@ -1,6 +1,13 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[show edit update]
 
+  def show
+    post_icons = @user.post_icons.includes(:user)
+    created_icons = @user.created_icons.includes(:user)
+    @icons_all = (post_icons + created_icons).sort_by(&:created_at).reverse
+    @icons = Kaminari.paginate_array(@icons_all).page(params[:page]).per(10)
+  end
+
   def edit; end
 
   def update
@@ -11,13 +18,6 @@ class ProfilesController < ApplicationController
       flash.now[:danger] = "編集に失敗しました"
       render :edit
     end
-  end
-
-  def show
-    post_icons = @user.post_icons.includes(:user)
-    created_icons = @user.created_icons.includes(:user)
-    @icons_all = (post_icons + created_icons).sort_by(&:created_at).reverse
-    @icons = Kaminari.paginate_array(@icons_all).page(params[:page]).per(10)
   end
 
   private
