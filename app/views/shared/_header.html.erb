@@ -49,7 +49,7 @@
             <% if current_user.current_icon.attached?%>
               <div class="avatar">
                 <div class="w-8 rounded-full ring ring-success ring-offset-base-100 ring-offset-2">
-                    <%= image_tag current_user.current_icon %>
+                    <%= image_tag current_user.current_icon.variant(resize: '70x70').processed %>
                 </div>
               </div>
             <% else %>  
