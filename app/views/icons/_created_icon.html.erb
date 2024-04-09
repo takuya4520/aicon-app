@@ -19,7 +19,7 @@
         <% if icon.user.current_icon.attached?%>
           <div class="avatar p-2">
             <div class="w-8 rounded-full ring ring-success ring-offset-base-100 ring-offset-2">
-                <%= image_tag icon.user.current_icon %>
+                <%= image_tag icon.user.current_icon.variant(resize: '70x70').processed %>
             </div>
           </div>
         <% else %>  
