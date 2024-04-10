@@ -2,7 +2,7 @@
   <%= link_to (created_icon_path(icon)) do %>
     <div class="avatar mt-5 mx-5 justify-content">
       <div class="w-40 rounded-full ring ring-accent justify-center">
-        <%= image_tag icon.icon.variant(resize: '200x200').processed if icon.icon.attached? %>
+        <%= image_tag icon.icon.variant(resize: '180x180').processed if icon.icon.attached? %>
       </div>
     </div>
   <% end %>
@@ -19,7 +19,7 @@
         <% if icon.user.current_icon.attached?%>
           <div class="avatar p-2">
             <div class="w-8 rounded-full ring ring-success ring-offset-base-100 ring-offset-2">
-                <%= image_tag icon.user.current_icon %>
+                <%= image_tag icon.user.current_icon.variant(resize: '70x70').processed %>
             </div>
           </div>
         <% else %>  
