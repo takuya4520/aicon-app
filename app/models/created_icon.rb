@@ -21,6 +21,6 @@ class CreatedIcon < ApplicationRecord
                                       message:   "should be less than 5MB" }
   enum status: { published: 0, unpublished: 1 }
 
-  NGWORD_REGEX = /(.)\1{4,}/.freeze
+  validate :title_cannot_contain_blacklist_words
 
 end
