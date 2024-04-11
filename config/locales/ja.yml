@@ -1,0 +1,5 @@
+ja:
+  activerecord:
+    attributes:
+      created_icon:
+        title: キーワード
