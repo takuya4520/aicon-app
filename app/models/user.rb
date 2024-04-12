@@ -5,7 +5,7 @@ class User < ApplicationRecord
     attachable.variant :display, resize_to_limit: [200, 200]
   end
 
-  validates :current_icon,    content_type: { in: %w[image/jpeg image/gif image/png],
+  validates :current_icon,    content_type: { in: %w[image/jpeg image/gif image/png image/webp],
                                       message: "must be a valid icon format" },
                               size:         { less_than: 5.megabytes,
                                       message:   "should be less than 5MB" }
