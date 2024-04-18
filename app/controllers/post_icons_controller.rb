@@ -15,11 +15,17 @@ class PostIconsController < ApplicationController
   def create
     @posticon = current_user.post_icons.build(posticon_params)
     @posticon.icon.attach(params[:post_icon][:icon])
-    if @posticon.save
-      flash[:success] = "アイコンを投稿しました"
-      redirect_to post_icon_url(@posticon)
-    else
-      flash.now[:danger] = "アイコンの投稿に失敗しました"
+    result = Vision.image_analysis(params[:post_icon][:icon])
+    if result
+      if @posticon.save
+        flash[:success] = "アイコンを投稿しました"
+        redirect_to post_icon_url(@posticon)
+      else
+        flash.now[:error] = "アイコンの投稿に失敗しました"
+        render :new, status: :unprocessable_entity
+      end
+    else 
+      flash.now[:error] = "不適切の画像です"
       render :new, status: :unprocessable_entity
     end
   end
@@ -29,7 +35,7 @@ class PostIconsController < ApplicationController
       flash[:success] = "投稿を編集しました"
       redirect_to post_icon_path(@posticon)
     else
-      flash.now[:danger] = "編集に失敗しました"
+      flash.now[:error] = "編集に失敗しました"
       render icons_url
     end
   end
