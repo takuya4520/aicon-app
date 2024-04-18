@@ -41,3 +41,4 @@ config/environments/*.local.yml
 
 /.env*
 !/.env*.erb.env
+.env
