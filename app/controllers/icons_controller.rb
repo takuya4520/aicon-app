@@ -3,15 +3,18 @@ class IconsController < ApplicationController
 
   def index
     if params[:search].present? && params[:taste].present?
+      #検索キーワード＋テイストの絞り込み
       created_icons = CreatedIcon.where("title LIKE ? AND taste = ?", "%#{params[:search]}%", params[:taste]).where(status: :published).includes(:user)
       icons = created_icons.sort_by(&:created_at).reverse
     
 
     elsif params[:taste].present?
+      #テイストの絞り込み
       created_icons = CreatedIcon.where(taste: params[:taste]).where(status: :published).includes(:user)
       icons = created_icons.sort_by(&:created_at).reverse
 
     elsif params[:search].present?
+      #検索キーワードの絞り込み
       post_icons = PostIcon.where("title LIKE ?", "%#{params[:search]}%").where(status: :published).includes(:user)
       created_icons = CreatedIcon.where("title LIKE ?", "%#{params[:search]}%").where(status: :published).includes(:user)
       icons = (post_icons + created_icons).sort_by(&:created_at).reverse
