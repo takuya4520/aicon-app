@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>admin|A.Icon</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  </head>
+
+  <body>
+    <%= render 'admin/shared/header' %>
+    <div class="container w-5/6 mx-auto max-w-screen-xl">
+      <%= render 'layouts/flash_messages' %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

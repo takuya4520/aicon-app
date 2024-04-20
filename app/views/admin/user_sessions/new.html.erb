@@ -1,0 +1,23 @@
+<div class="mx-auto md:w-2/3 w-full max-w-xs">
+  <h1 class="font-bold text-2xl text-center text-neutral mb-4">
+    管理者ログイン
+  </h1>
+
+  <div class="card shrink-0 w-full max-w-sm mx-auto shadow-2xl bg-base-100">
+    <%= form_with model: @user, class: 'card-body' do |f| %>
+      <div class="form-control">
+        <%= f.label :email, class: 'label' %>
+        <%= f.email_field :email, class: 'input input-bordered input-primary w-full max-w-xs' %>
+      </div>
+
+      <div class="form-control">
+        <%= f.label :password, class: 'label' %>
+        <%= f.password_field :password, class: 'input input-bordered input-primary w-full max-w-xs' %>
+      </div>
+
+      <div class="form-control text-center mt-6">
+        <%= f.submit "ログイン", class: "btn btn-accent" %>
+      </div>
+    <% end %>
+  </div>
+</div>
