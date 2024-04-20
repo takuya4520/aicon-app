@@ -27,4 +27,12 @@ Rails.application.routes.draw do
   resources :icons, only: %i[index]
   resources :like_icons, only: %i[index]
   resources :password_resets, only: [:new, :create, :edit, :update]
+
+  #管理画面用
+  namespace :admin do
+    root 'dashboards#index'
+    resources :users
+    resources :post_icons
+    resources :created_icons
+  end
 end
