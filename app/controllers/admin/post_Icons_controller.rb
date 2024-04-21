@@ -9,7 +9,7 @@ class Admin::PostIconsController < Admin::BaseController
   def update
     if @post_icon.update(post_icon_params)
       flash[:success] = "投稿アイコンを更新しました。"
-      redirect_to admin_post_icon_path(@post_icon)
+      redirect_to admin_post_icons_path
     else
       flash.now['error'] = "投稿アイコンの編集に失敗しました。"
       render :edit

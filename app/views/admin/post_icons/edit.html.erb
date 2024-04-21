@@ -1,0 +1,27 @@
+<div class="m-5">
+  <div class="w-full p-6 m-auto bg-slate-50 rounded-md shadow-md lg:max-w-lg">
+    <h1 class="text-3xl font-semibold text-center">アイコンの編集</h1>
+    <div class ="items-center åm-2">
+  <%= form_with model: @post_icon, url: admin_post_icon_url(@post_icon), local: true do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'w-full input input-bordered input-primary', required: true %>
+    <div class='my-4 flex items-center justify-center'>
+      <div class="mx-2 flex items-center">
+        <%= form.radio_button :status, 'published', id: 'status_published', class: 'radio' %>
+        <%= form.label :status_published, '公開', class: 'form-check-label' %>  
+      </div>
+      <div class="mx-2 flex items-center">
+        <%= form.radio_button :status, 'unpublished', id: 'status_unpublished', class: 'radio' %>
+        <%= form.label :status_unpublished, '非公開', class: 'form-check-label' %>
+      </div>
+    </div>
+    <div class='my-4 flex items-center justify-center'>
+      <%= image_tag @post_icon.icon.variant(resize: '300x300').processed %>
+    </div>
+    <div class="form-control mt-6 text-center">
+      <%= form.submit class: 'btn btn-accent' %>
+    </div>
+  <% end %>
+    </div>
+  </div>
+</div>
