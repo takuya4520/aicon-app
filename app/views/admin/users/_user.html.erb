@@ -1,0 +1,12 @@
+<tr>
+  <th><%= user.id %></th>
+  <td><%= user.name %></td>
+  <td><%= user.role %></td>
+  <td><%= user.email %></td>
+  <td>
+    <%= link_to "編集", edit_admin_user_path(user), class: 'btn btn-sm' %>
+  </td>
+  <td>
+    <%= link_to "削除", admin_user_path(user), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？"}, class: 'btn btn-sm' %>
+  </td>
+</tr>

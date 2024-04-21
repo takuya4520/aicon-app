@@ -1,0 +1,27 @@
+
+<header>
+  <div class="navbar">
+    <div class="flex-1">
+      <%= link_to 'A.Icon  管理画面', admin_root_path, class: "btn btn-ghost text-3xl font-header_name" %>
+    </div>
+    <div class="flex-none md:hidden">
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost rounded-btn">
+          <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
+        </div>
+        <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4 font-body_style">
+          <li><%= link_to 'ユーザー', admin_users_path %></li>
+          <li><%= link_to '生成アイコン', admin_created_icons_path %></li>
+          <li><%= link_to '投稿アイコン', admin_post_icons_path %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hidden md:block">
+      <ul class="menu menu-horizontal px-1 items-center py-0 font-body_style">
+        <li><%= link_to 'ユーザー', admin_users_path %></li>
+        <li><%= link_to '生成アイコン', admin_created_icons_path %></li>
+        <li><%= link_to '投稿アイコン', admin_post_icons_path %></li>
+      </ul>
+    </div>
+  </div>
+</header>
