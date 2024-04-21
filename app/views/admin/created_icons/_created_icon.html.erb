@@ -1,0 +1,13 @@
+<tr>
+  <th><%= created_icon.id %></th>
+  <td><%= created_icon.title %></td>
+  <td><%= created_icon.status %></td>
+  <td><%= image_tag created_icon.icon.variant(resize: '70x70').processed %></td>
+  <td><%= created_icon.user.name %></td>
+  <td>
+    <%= link_to "編集", edit_admin_created_icon_path(created_icon), class: 'btn btn-sm' %>
+  </td>
+  <td>
+    <%= link_to "削除", admin_created_icon_path(created_icon), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？"}, class: 'btn btn-sm' %>
+  </td>
+</tr>

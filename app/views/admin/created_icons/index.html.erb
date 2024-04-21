@@ -1,0 +1,19 @@
+<div class="overflow-x-auto">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Icon</th>
+        <th>User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @created_icons %>
+    </tbody>
+  </table>
+</div>
+<div class="flex justify-center my-8">
+  <%= paginate @created_icons %>
+</div>
