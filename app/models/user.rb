@@ -28,6 +28,8 @@ class User < ApplicationRecord
   has_many :post_icon_likes, dependent: :destroy
   has_many :post_icon_like_icons, through: :post_icon_likes, source: :post_icon
 
+  enum role: { general: 0, admin: 1 }
+
   def created_icon_like?(icon)
     created_icon_like_icons.include?(icon)
   end

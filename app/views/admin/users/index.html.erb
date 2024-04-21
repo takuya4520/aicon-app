@@ -1,0 +1,18 @@
+<div class="overflow-x-auto">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>role</th>
+        <th>email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @users %>
+    </tbody>
+  </table>
+</div>
+<div class="flex justify-center my-8">
+  <%= paginate @users %>
+</div>

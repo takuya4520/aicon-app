@@ -1,0 +1,27 @@
+<div class="m-5">
+  <div class="w-full p-6 m-auto bg-slate-50 rounded-md shadow-md lg:max-w-lg">
+    <h1 class="text-3xl font-semibold text-center">アイコンの編集</h1>
+    <div class ="items-center åm-2">
+  <%= form_with model: @user, url: admin_user_url(@user), local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'w-full input input-bordered input-primary', required: true %>
+    <div class='my-4 flex items-center justify-center'>
+    <div class="mx-2 flex items-center">
+      <%= form.radio_button :role, 'general', id: 'role_general', class: 'radio' %>
+      <%= form.label :role_general, 'general', class: 'form-check-label' %>  
+    </div>
+    <div class="mx-2 flex items-center">
+      <%= form.radio_button :role, 'admin', id: 'role_admin', class: 'radio' %>
+      <%= form.label :role_admin, 'admin', class: 'form-check-label' %>
+    </div>
+    </div>
+    <%= form.label :email %>
+    <%= form.email_field :email, class: 'w-full input input-bordered input-primary', required: true %>
+
+    <div class="form-control mt-6 text-center">
+      <%= form.submit class: 'btn btn-accent' %>
+    </div>
+  <% end %>
+    </div>
+  </div>
+</div>
