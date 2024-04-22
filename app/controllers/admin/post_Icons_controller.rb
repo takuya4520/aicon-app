@@ -1,7 +1,8 @@
 class Admin::PostIconsController < Admin::BaseController
   before_action :set_post_icon, only: %i[edit update destroy]
   def index
-    @post_icons = PostIcon.all.order("created_at DESC").page(params[:page]).per(10)
+    #N+1問題対策
+    @post_icons = PostIcon.includes(:user).order("created_at DESC").page(params[:page]).per(10)
   end
 
   def edit; end
