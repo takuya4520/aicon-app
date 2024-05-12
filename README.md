@@ -5,7 +5,7 @@
 
 ## ■サービス概要
 A.IconはSNSなどのアイコンを何にしようか迷っている、困っている方向けのサービスになります。誰でも手軽にオリジナルアイコンを作成(AI画像生成)する機能に加え、他の方々がどのようなアイコンを使っているか確認することができます。
-A.Iconは、あなたの「これだ！」と思えるアイコン探しをお手伝いします。もっと自分らしいアイコンを、一緒に見つけましょう。
+A.Iconは、あなたの「これだ！」と思えるアイコン作成をお手伝いします。もっと自分らしいアイコンを、一緒に見つけましょう。
 
 ## ■ このサービスへの思い・作りたい理由
 SNSのプロフィールを新しく設定する際、どのアイコンを選ぶかで迷う経験は、皆さんにとってもあるのではないでしょうか。  
@@ -69,11 +69,6 @@ A.Iconには、他のユーザーが作成したアイコンを見ることが�
 |Web API|OpenAI API|
 |その他|AWS S3/Tailwindcss/daisyUI|
 
-## ■現状考えている課題・検討事項
-* 画像サイズの最適化(生成された画像サイズが大きすぎる) 
-* 画像生成中のUXの低下(ActiveJobで改善できるか検証予定)
-* OpenAIAPI以外のAPIの検討(GeminiAPIなど)
-
 ## ■画面遷移図
 [画面遷移図](https://www.figma.com/file/r1CkCJNq8dRtqha5bFirlU/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0-1&mode=design&t=7wbMxzTMZGb3KW1S-0)
 
@@ -111,12 +106,6 @@ erDiagram
         datetime created_at "作成日"
     }
 
-    ICON_TASTES {
-        int id PK "テイストID"
-        string taste "テイスト名"
-        string prompt_text "プロンプトテキスト"
-    }
-
     POST_ICON_LIKES {
         int user_id FK "ユーザーID"
         int post_icons_id FK "投稿アイコンID"
@@ -134,6 +123,5 @@ erDiagram
 
     POST_ICONS ||--o{ POST_ICON_LIKES : "liked by"
     CREATED_ICONS ||--o{ CREATED_ICON_LIKES : "liked by"
-    CREATED_ICONS ||--|| ICON_TASTES : "has"
 
 ```
