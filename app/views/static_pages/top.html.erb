@@ -1,7 +1,7 @@
 <div class="pb-6 sm:pb-8 lg:pb-12 mx-5">
   <div class="w-full p-6 m-auto bg-slate-50 rounded-md shadow-md  mt-5">
     <section class="flex flex-wrap ">
-      <div class="container mx-auto flex md:my-20 md:flex-row flex-col items-center">
+      <div class="container mx-auto flex md:mt-20 md:flex-row flex-col items-center">
       <!-- image - start -->
         <div class="flex items-center justify-center md:w-1/2 w-full h-80 overflow-hidden">
           <%= image_tag asset_path("top2.png", size: "250x250"), class:"max-w-full max-h-full" %>
@@ -26,14 +26,14 @@
       </div>
     </section>
     <% if logged_in? %>
-      <div class="text-center m-5  md:mb-10">
+      <div class="text-center md:mb-10">
         <%= link_to 'アイコンを作る', new_created_icon_path,class:"btn btn-outline btn-secondary m-5"%>
         <%= link_to 'アイコンを投稿する', new_post_icon_path,class:"btn btn-outline btn-secondary m-5"%>
       </div>
     <% else %>
-      <div class="text-center m-5  md:mb-10">
+      <div class="text-center md:mb-10">
         <div class='inset-y-0 right-0"'>
-            <label for="my_modal_1" class="btn btn-outline btn-secondary m-5">始める</label>
+            <label for="my_modal_1" class="btn btn-outline btn-secondary mt-5">ログイン/新規登録</label>
             <!-- Put this part before </body> tag -->
             <input type="checkbox" id="my_modal_1" class="modal-toggle" />
             <div class="modal" role="dialog">
@@ -63,8 +63,8 @@
               </div>
             </div>
           </div>
-        <div class="tooltip tooltip-open tooltip-bottom m-5" data-tip="まずは">
-          <label for="my_modal_2" class="btn btn-outline btn-secondary">お試し(ゲストログイン)</label>
+        <div class="tooltip tooltip-open tooltip-bottom mb-5" data-tip="まずは">
+          <label for="my_modal_2" class="btn btn-sm btn-ghost">お試し(ゲストログイン)</label>
             <!-- Put this part before </body> tag -->
             <input type="checkbox" id="my_modal_2" class="modal-toggle" />
             <div class="modal" role="dialog">
