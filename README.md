@@ -38,39 +38,36 @@ A.Iconは、SNSプロフィール画像などで頻繁に使用される円形�
 ### ・みんなのアイコン一覧を通じたアイデアの共有
 A.Iconには、他のユーザーが作成したアイコンを見ることができる「みんなのアイコン一覧」機能があります。この機能を通じて、ユーザーは他人のアイコンから新しいアイデアを得ることができます。他の画像生成サービスでは提供されていないこの機能は大きな特徴です。
 
-## ■ 機能候補
+## ■ 機能
 * 会員登録
 * ログイン
 * アイコン生成機能
-* 生成したアイコン投稿機能
+* アイコンの生成機能
   * いいね機能
-  * Xシェア機能
-* アイコン専用フォルダ
-  * 生成したアイコンはここに保存
-  * アイコン投稿機能
-    * タイトルやコメントを記載できる(思いいれなど)
-    * 共有ありにすることでみんなのアイコン一覧に表示される
+  * シェア機能
+  * 公開/非公開設定機能
+* アイコンの保存機能
+  * いいね機能
+  * 公開/非公開設定機能
 * みんなのアイコン一覧機能
-  * コメント機能
   * いいね機能
   * ソート機能
 * プロフィールの設定
+  *  自分のアイコン一覧
   *  いいねした投稿一覧
+* パスワード再設定機能
 
 
 ## ■使用予定技術
 |カテゴリ|技術|
 |:-------------|:------------|
 |開発環境|Docker|
-|使用言語|Ruby 3.2.2 /Rails 7系/JavaScript|
+|使用言語|Ruby 3.2.2/Rails 7.0.8/JavaScript|
 |ライブラリ|MiniMagick|
 |データベース|PostgreSQL|
 |インフラ| Render|
-|Web API|OpenAI API|
-|その他|AWS S3/Tailwindcss/daisyUI|
-
-## ■画面遷移図
-[画面遷移図](https://www.figma.com/file/r1CkCJNq8dRtqha5bFirlU/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0-1&mode=design&t=7wbMxzTMZGb3KW1S-0)
+|Web API|OpenAI API/Vision API|
+|その他|amazon S3/Tailwindcss/daisyUI|
 
 ## ■ER図
 ```mermaid
@@ -125,3 +122,6 @@ erDiagram
     CREATED_ICONS ||--o{ CREATED_ICON_LIKES : "liked by"
 
 ```
+
+## ■画面遷移図(初期のままです)
+[画面遷移図](https://www.figma.com/file/r1CkCJNq8dRtqha5bFirlU/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0-1&mode=design&t=7wbMxzTMZGb3KW1S-0)
