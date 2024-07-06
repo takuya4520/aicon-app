@@ -9,8 +9,7 @@ class PostIconsController < ApplicationController
     @posticon = PostIcon.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @posticon = current_user.post_icons.build(posticon_params)
@@ -24,7 +23,7 @@ class PostIconsController < ApplicationController
         flash.now[:error] = "アイコンの投稿に失敗しました"
         render :new, status: :unprocessable_entity
       end
-    else 
+    else
       flash.now[:error] = "不適切の画像です"
       render :new, status: :unprocessable_entity
     end
@@ -46,6 +45,7 @@ class PostIconsController < ApplicationController
   end
 
   private
+
     def set_posticon
       @posticon = current_user.post_icons.find(params[:id])
     end

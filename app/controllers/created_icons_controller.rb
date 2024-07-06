@@ -7,11 +7,10 @@ class CreatedIconsController < ApplicationController
   end
 
   def new
-    @createdicon =  CreatedIcon.new
+    @createdicon = CreatedIcon.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @createdicon = current_user.created_icons.build(createdicon_params)
@@ -42,6 +41,7 @@ class CreatedIconsController < ApplicationController
   end
 
   private
+
     def set_createdicon
       @createdicon = current_user.created_icons.find(params[:id])
     end
