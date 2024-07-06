@@ -1,7 +1,7 @@
 class Admin::CreatedIconsController < Admin::BaseController
   before_action :set_created_icon, only: %i[edit update destroy]
   def index
-    #N+1問題対策
+    # N+1問題対策
     @created_icons = CreatedIcon.includes(:user).order("created_at DESC").page(params[:page]).per(10)
   end
 

@@ -1,2 +1,0 @@
-module PostIconLikesHelper
-end
